@@ -2,6 +2,7 @@ import type { Config } from "tailwindcss";
 import daisyui from "daisyui";
 
 export default {
+  darkMode: ["selector", "[data-theme*='dark']"],
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
@@ -11,6 +12,7 @@ export default {
       },
     },
   },
+
   daisyui: {
     themes: [
       {
@@ -19,7 +21,7 @@ export default {
           secondary: "#013C51",
           accent: "#B4DB1C",
           neutral: "#D5DBDB",
-          "base-100": "#FEFFFF",
+          "base-100": "#F8F8FF",
           info: "#53B6DD",
           success: "#2DCC70",
           warning: "#F1C40F",
