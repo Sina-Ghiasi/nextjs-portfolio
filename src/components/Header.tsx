@@ -1,8 +1,8 @@
 import Link from "next/link";
-import Logo from "./Logo";
 import { Menu } from "lucide-react";
 import NavLinkList from "./NavLinkList";
 import ThemeSwitchButton from "./ThemeSwitchButton";
+import Image from "next/image";
 
 export default function Header() {
   return (
@@ -19,12 +19,19 @@ export default function Header() {
         </div>
 
         <Link href="/">
-          <Logo className="w-12 h-12 mx-2" />
+          <Image
+            src="/logos/sina-ghiasi.svg"
+            className="mx-2"
+            width={48}
+            height={48}
+            alt="logo"
+            priority
+          />
         </Link>
       </div>
 
       <div className="navbar-center hidden lg:flex">
-        <NavLinkList className="menu menu-horizontal px-1" />
+        <NavLinkList className="flex flex-row gap-4" />
       </div>
 
       <div className="navbar-end">

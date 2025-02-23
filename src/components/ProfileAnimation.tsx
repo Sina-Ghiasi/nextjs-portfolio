@@ -14,8 +14,10 @@ export default function ProfileAnimation() {
         ".img",
         {
           autoAlpha: 0,
+          y: -30,
         },
         {
+          y: 0,
           autoAlpha: 1,
           duration: 1,
           ease: "expo.out",
@@ -76,11 +78,7 @@ export default function ProfileAnimation() {
         &nbsp;
         <span className="name invisible text-base-content">قیاسی</span>
       </h1>
-      <div
-        className="job-title invisible text-[clamp(1rem,3vmin,3rem)] font-bold text-secondary dark:bg-gradient-to-tr 
-  dark:from-yellow-600 dark:via-yellow-200 dark:to-yellow-600 
-  dark:bg-clip-text dark:text-transparent"
-      >
+      <div className="job-title invisible text-[clamp(1rem,3vmin,3rem)] font-bold text-primary">
         یک توسعه دهنده خلاق وب
       </div>
     </div>

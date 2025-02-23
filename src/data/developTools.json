@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Javascript",
+    "imageUrl": "/logos/javascript.svg"
+  },
+  {
+    "name": "Typescript",
+    "imageUrl": "/logos/typescript.svg"
+  },
+  {
+    "name": "React",
+    "imageUrl": "/logos/react.svg"
+  },
+  {
+    "name": "Next.js",
+    "imageUrl": "/logos/nextjs.svg"
+  },
+  {
+    "name": "Tailwind CSS",
+    "imageUrl": "/logos/tailwind-css.svg"
+  },
+  {
+    "name": "Bootstrap",
+    "imageUrl": "/logos/bootstrap.svg"
+  },
+  {
+    "name": "Three.js",
+    "imageUrl": "/logos/threejs.svg"
+  },
+  {
+    "name": "Git",
+    "imageUrl": "/logos/git.svg"
+  },
+  {
+    "name": "Github",
+    "imageUrl": "/logos/github.svg"
+  },
+  {
+    "name": "Node.js",
+    "imageUrl": "/logos/nodejs.svg"
+  },
+  {
+    "name": "Express.js",
+    "imageUrl": "/logos/express.svg"
+  },
+  {
+    "name": "MongoDB",
+    "imageUrl": "/logos/mongodb.svg"
+  },
+  {
+    "name": "Wordpress",
+    "imageUrl": "/logos/wordpress.svg"
+  },
+  {
+    "name": "MySQL",
+    "imageUrl": "/logos/mysql.svg"
+  },
+  {
+    "name": "PHP",
+    "imageUrl": "/logos/php.svg"
+  },
+  {
+    "name": "Figma",
+    "imageUrl": "/logos/figma.svg"
+  }
+]

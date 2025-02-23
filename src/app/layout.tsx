@@ -4,6 +4,7 @@ import shabnamFont from "@/constants/shabnamFont";
 import { Metadata } from "next";
 import Header from "@/components/Header";
 import Providers from "@/providers/Providers";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "سایت شخصی سینا قیاسی | خانه",
@@ -23,6 +24,7 @@ export default function RootLayout({
         <Providers>
           <Header />
           <div className="container xl:max-w-screen-xl mx-auto">{children}</div>
+          <Footer />
         </Providers>
       </body>
     </html>

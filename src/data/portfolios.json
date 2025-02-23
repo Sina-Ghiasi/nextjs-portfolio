@@ -1,0 +1,72 @@
+[
+  {
+    "title": "Next.js blog",
+    "summary": "This is a portfolio description",
+    "description": "This is a portfolio description",
+    "slug": "nextjs-blog",
+    "imageUrl": "/images/portfolios/portfolio-placeholder.svg",
+    "technologies": ["React", "Next.js"]
+  },
+  {
+    "title": "Booking hotel",
+    "summary": "A booking frontend for hotels",
+    "description": "This is a portfolio description",
+    "slug": "booking-hotel",
+    "imageUrl": "/images/portfolios/portfolio-placeholder.svg",
+    "technologies": ["React", "Javascript", "HTML", "CSS"]
+  },
+  {
+    "title": "Course online shop",
+    "summary": "An online shop for selling courses",
+    "description": "This is a portfolio description",
+    "slug": "course-online-shop",
+    "imageUrl": "/images/portfolios/portfolio-placeholder.svg",
+    "technologies": ["React", "Tailwind-CSS", "Node.js", "Express", "MongoDB"]
+  },
+  {
+    "title": "Three.js catapult game",
+    "summary": "This is a portfolio description",
+    "description": "This is a portfolio description",
+    "slug": "three.js-catapult-game",
+    "imageUrl": "/images/portfolios/portfolio-placeholder.svg",
+    "technologies": ["Javascript", "HTML", "CSS", "Three.js"]
+  },
+  {
+    "title": "Todo list",
+    "summary": "A simple Todo List app built with React, Redux, and TypeScript to warm up and practice core concepts. This project focuses on integrating Redux Toolkit with TypeScript for efficient state management and type safety.",
+    "description": "This is a portfolio description",
+    "slug": "todo-list",
+    "imageUrl": "/images/portfolios/portfolio-placeholder.svg",
+    "technologies": [
+      "React",
+      "Redux",
+      "Redux-Toolkit",
+      "Javascript",
+      "Typescript"
+    ]
+  },
+  {
+    "title": "Responsive personal portfolio website",
+    "summary": "Responsive personal portfolio website using HTML CSS Javascript",
+    "description": "This is a portfolio description",
+    "slug": "responsive-personal-portfolio-website",
+    "imageUrl": "/images/portfolios/portfolio-placeholder.svg",
+    "technologies": ["Javascript", "HTML", "CSS"]
+  },
+  {
+    "title": "WooCommerce API panel",
+    "summary": "A panel to help list products and price bulk edit them",
+    "description": "This is a portfolio description",
+    "slug": "wc-api-panel",
+    "imageUrl": "/images/portfolios/portfolio-placeholder.svg",
+    "technologies": ["PHP", "Javascript", "Bootstrap", "HTML", "CSS"]
+  },
+  {
+    "title": "WooCommerce sync with 3p API",
+    "summary": "Wordpress plugin that can be used to sync WooCommerce with a 3rd party API",
+    "description": "This is a portfolio description",
+    "slug": "wc-sync-with-3p-API ",
+    "imageUrl": "/images/portfolios/portfolio-placeholder.svg",
+    "technologies": ["PHP", "Javascript", "HTML", "CSS"]
+  }
+]
