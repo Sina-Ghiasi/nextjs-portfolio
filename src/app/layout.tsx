@@ -2,13 +2,17 @@ import "@/styles/globals.css";
 import estedadFont from "@/constants/estedadFont";
 import shabnamFont from "@/constants/shabnamFont";
 import { Metadata } from "next";
-import Header from "@/components/Header";
 import Providers from "@/providers/Providers";
-import Footer from "@/components/Footer";
+import Header from "./_components/Header";
+import Footer from "./_components/Footer";
 
 export const metadata: Metadata = {
-  title: "سایت شخصی سینا قیاسی | خانه",
+  title: {
+    default: "سایت شخصی سینا قیاسی",
+    template: "%s",
+  },
   description: "سایت شخصی و نمونه کارهای سینا قیاسی",
+  metadataBase: new URL("https://sinaghiasi.ir"),
 };
 
 export default function RootLayout({
@@ -23,7 +27,9 @@ export default function RootLayout({
       >
         <Providers>
           <Header />
-          <div className="container xl:max-w-screen-xl mx-auto">{children}</div>
+          <main className="container xl:max-w-screen-xl mx-auto">
+            {children}
+          </main>
           <Footer />
         </Providers>
       </body>

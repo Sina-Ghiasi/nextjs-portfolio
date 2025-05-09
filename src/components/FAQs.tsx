@@ -10,7 +10,7 @@ export default function FAQs() {
       </h3>
       <p className="text-sm mb-8 text-center">پاسخ برخی از سوالات رایج شما</p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="md:col-span-2 p-4 lg:p-6 bg-neutral rounded-xl">
+        <div className="md:col-span-2 p-4 lg:p-6 bg-base-200 rounded-xl">
           {faqs.map((faq, index) => (
             <div
               key={faq.question}
@@ -28,7 +28,7 @@ export default function FAQs() {
             </div>
           ))}
         </div>
-        <div className="flex flex-col items-center gap-y-4 self-start p-6 bg-neutral rounded-xl ">
+        <div className="flex flex-col items-center gap-y-4 self-start p-6 bg-base-200 rounded-xl ">
           <CircleHelp className="w-12 h-12 text-primary mb-4" />
           <h4 className="font-bold">نیاز به راهنمایی یا مشاوره دارید؟</h4>
           <p className="text-sm mb-4">

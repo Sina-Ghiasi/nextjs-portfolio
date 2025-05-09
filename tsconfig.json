@@ -25,6 +25,7 @@
       "@/constants/*": ["constants/*"],
       "@/providers/*": ["providers/*"],
       "@/hooks/*": ["hooks/*"],
+      "@/types/*": ["types/*"],
       "@/data/*": ["data/*"]
     }
   },

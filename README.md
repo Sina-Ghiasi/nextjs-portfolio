@@ -27,6 +27,6 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## 📜 License
 
-This project is licensed under the **MIT License**. Feel free to use and modify it for your own purposes.
+The code in this project is licensed under the **MIT License**. You are free to use and modify the code for your own purposes. However, other content such as texts, images, and other non-code assets are not covered by the MIT License and may have separate usage restrictions. Please contact the repository owner for permissions regarding non-code content.
 
 If you like this project, **consider giving it a star ⭐ on GitHub!**

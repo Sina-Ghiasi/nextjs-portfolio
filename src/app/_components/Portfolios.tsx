@@ -1,6 +1,9 @@
-import portfolios from "@/data/portfolios.json";
-import PortfolioCard from "./PortfolioCard";
+import PortfolioCard from "@/components/PortfolioCard";
+import { PortfolioType } from "@/types/portfolio";
 import Link from "next/link";
+import portfolios from "@/data/portfolios.json";
+
+const typedPortfolios: PortfolioType[] = portfolios as PortfolioType[];
 
 export default function Portfolios() {
   return (
@@ -13,7 +16,7 @@ export default function Portfolios() {
         مهارت و تجربه من در توسعه وب است.
       </p>
       <div className="flex flex-col gap-8 mb-8">
-        {portfolios.slice(0, 4).map((portfolio) => (
+        {typedPortfolios.slice(0, 4).map((portfolio) => (
           <PortfolioCard key={portfolio.slug} portfolio={portfolio} />
         ))}
       </div>

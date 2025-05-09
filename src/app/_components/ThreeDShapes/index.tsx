@@ -2,7 +2,7 @@
 import { Mesh, Material, BufferGeometry } from "three";
 import { Canvas, ThreeEvent } from "@react-three/fiber";
 import { ContactShadows, Float, Environment } from "@react-three/drei";
-import { Suspense, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { geometries } from "./geometries";
@@ -10,26 +10,36 @@ import { materials } from "./materials";
 import useSound from "@/hooks/useSounds";
 
 export default function ThreeDShapes() {
+  const [hdri, setHdri] = useState<string | null>(null);
+
+  useEffect(() => {
+    import("@pmndrs/assets/hdri/bridge.exr")
+      .then((module) => setHdri(module.default))
+      .catch((err) => console.error("Failed to load HDRI:", err));
+  }, []);
+
   return (
-    <Canvas
-      className="z-0"
-      shadows
-      gl={{ antialias: false }}
-      dpr={[1, 1.5]}
-      camera={{ position: [0, 0, 25], fov: 30, near: 1, far: 40 }}
-    >
-      <Suspense fallback={null}>
-        <Geometries />
-        <ContactShadows
-          position={[0, -3.5, 0]}
-          opacity={0.65}
-          scale={40}
-          blur={1}
-          far={9}
-        />
-        <Environment preset="studio" />
-      </Suspense>
-    </Canvas>
+    <div className="h-[300px] md:h-full max-h-[600px]">
+      <Canvas
+        className="z-0"
+        shadows
+        gl={{ antialias: false }}
+        dpr={[1, 1.5]}
+        camera={{ position: [0, 0, 20], fov: 30, near: 1, far: 40 }}
+      >
+        <Suspense fallback={null}>
+          <Geometries />
+          <ContactShadows
+            position={[0, -3.5, 0]}
+            opacity={0.65}
+            scale={40}
+            blur={1}
+            far={9}
+          />
+          {hdri && <Environment files={hdri} />}
+        </Suspense>
+      </Canvas>
+    </div>
   );
 }
 
@@ -69,7 +79,7 @@ function Geometry({
           y: 0,
           z: 0,
           duration: 1.5,
-          delay: gsap.utils.random(3, 4),
+          delay: 0.3,
           ease: "elastic.out(1, 0.3)",
         });
       }

@@ -8,7 +8,7 @@ export default function Benefits() {
         با انتخاب خدمات طراحی و توسعه من شما از مزایای زیر بهره مند خواهید شد.
       </p>
       <div className="grid grid-cols-12 gap-4">
-        <div className="col-span-12 lg:col-span-6 p-4 md:p-6 rounded-xl bg-neutral text-neutral-content ">
+        <div className="col-span-12 lg:col-span-6 p-4 md:p-6 rounded-xl bg-base-200 text-base-content border border-base-200 hover:border-base-300">
           <h5 className="mb-2 font-bold ">
             خلق وب‌ سایت‌هایی که بازدیدکننده‌ها رو به وجد میاره
           </h5>
@@ -22,7 +22,7 @@ export default function Benefits() {
             نتیجه رو به همراه بیاره.
           </p>
         </div>
-        <div className="col-span-12 lg:col-span-6 p-4 md:p-6 rounded-xl bg-neutral text-neutral-content ">
+        <div className="col-span-12 lg:col-span-6 p-4 md:p-6 rounded-xl bg-base-200 text-base-content border border-base-200 hover:border-base-300">
           <h5 className="mb-2 font-bold">
             طراحی‌های سفارشی متناسب با برند شما
           </h5>
@@ -34,7 +34,7 @@ export default function Benefits() {
             مخاطبان هدف شما ارتباط برقرار می‌کنه.
           </p>
         </div>
-        <div className="col-span-12 lg:col-span-4 p-4 md:p-6 rounded-xl bg-neutral text-neutral-content ">
+        <div className="col-span-12 lg:col-span-4 p-4 md:p-6 rounded-xl bg-base-200 text-base-content border border-base-200 hover:border-base-300">
           <h5 className="mb-2 font-bold">تخصص در فناوری‌های پیشرفته</h5>
           <p className="text-sm">
             با استفاده از ابزارهای مدرن و تخصص در بهترین شیوه‌های توسعه،
@@ -44,7 +44,7 @@ export default function Benefits() {
             پویا و جذاب استفاده می‌کنم.
           </p>
         </div>
-        <div className="col-span-12 lg:col-span-4 p-4 md:p-6 rounded-xl bg-neutral text-neutral-content ">
+        <div className="col-span-12 lg:col-span-4 p-4 md:p-6 rounded-xl bg-base-200 text-base-content border border-base-200 hover:border-base-300">
           <h5 className="mb-2 font-bold">
             طراحی‌های واکنش گرا برای دسترسی گسترده
           </h5>
@@ -55,7 +55,7 @@ export default function Benefits() {
             ارتباط برقرار کنید.
           </p>
         </div>
-        <div className="col-span-12 lg:col-span-4 p-4 md:p-6 rounded-xl bg-neutral text-neutral-content ">
+        <div className="col-span-12 lg:col-span-4 p-4 md:p-6 rounded-xl bg-base-200 text-base-content border border-base-200 hover:border-base-300">
           <h5 className="mb-2 font-bold">
             پشتیبانی و نگهداری پس از راه‌اندازی
           </h5>

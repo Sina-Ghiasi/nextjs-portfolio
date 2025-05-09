@@ -1,28 +1,12 @@
 import Link from "next/link";
 
-const linkList = [
-  {
-    href: "/",
-    title: "خانه",
-  },
-  {
-    href: "/about",
-    title: "درباره من",
-  },
-  {
-    href: "/portfolios",
-    title: "نمونه کارها",
-  },
-  {
-    href: "/contact",
-    title: "ارتباط با من",
-  },
-];
 export default function NavLinkList({
   className,
+  linkList,
   tabIndex,
 }: {
   className?: string;
+  linkList: { title: string; href: string }[];
   tabIndex?: number;
 }) {
   return (

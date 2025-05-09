@@ -1,8 +1,8 @@
-import Benefits from "@/components/Benefits";
 import FAQs from "@/components/FAQs";
-import Hero from "@/components/Hero";
-import Portfolios from "@/components/Portfolios";
+import Hero from "app/_components/Hero";
+import Portfolios from "app/_components/Portfolios";
 import Skills from "@/components/Skills";
+import Benefits from "./_components/Benefits";
 
 export default function HomePage() {
   return (

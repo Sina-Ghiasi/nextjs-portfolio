@@ -1,72 +1,89 @@
 [
   {
     "title": "Next.js blog",
-    "summary": "This is a portfolio description",
-    "description": "This is a portfolio description",
+    "summary": "این پروژه یک فرانت‌اند مدرن و پویا برای وبلاگ است که با استفاده از Next.js، TypeScript و Tailwind CSS ساخته شده و با یک API اختصاصی ادغام شده است. این قالب قدرتمند امکاناتی نظیر احراز هویت کاربر، جستجوی پست‌ها، ذخیره و لایک کردن محتوا را ارائه می‌دهد و با طراحی واکنش‌گرا و رابط کاربری جذاب، گزینه‌ای ایده‌آل برای توسعه‌دهندگان است که می‌خواهند یک پلتفرم وبلاگی شخصی یا حرفه‌ای ایجاد کنند. این پروژه همچنان در حال توسعه است و نقطه شروعی عالی برای ساخت وبلاگ‌های پیشرفته محسوب می‌شود.",
     "slug": "nextjs-blog",
-    "imageUrl": "/images/portfolios/portfolio-placeholder.svg",
-    "technologies": ["React", "Next.js"]
+    "images": [],
+    "technologies": ["React", "Next.js"],
+    "status": "active",
+    "githubUrl": "",
+    "demoUrl": ""
   },
-  {
-    "title": "Booking hotel",
-    "summary": "A booking frontend for hotels",
-    "description": "This is a portfolio description",
-    "slug": "booking-hotel",
-    "imageUrl": "/images/portfolios/portfolio-placeholder.svg",
-    "technologies": ["React", "Javascript", "HTML", "CSS"]
-  },
+
   {
     "title": "Course online shop",
-    "summary": "An online shop for selling courses",
-    "description": "This is a portfolio description",
+    "summary": "پروژه‌ی فروشگاه آنلاین دوره‌های آموزشی (Frontend و Backend) یک پلتفرم جامع با رابط کاربری مدرن و واکنش‌گرا است که با استفاده از فناوری‌های پیشرفته مانند React.js، Tailwind CSS و Axios برای فرانت‌اند و بک‌اند اختصاصی توسعه یافته است. این پروژه با اتصال به API بک‌اند، امکان مرور دوره‌ها، مدیریت حساب کاربری، سبد خرید و پنل مدیریت را برای کاربران و مدیران فراهم می‌کند. طراحی کاربرپسند و یکپارچگی فرانت‌اند و بک‌اند، این پروژه را به یک نمونه‌ی برجسته در مجموعه پروژه‌های من تبدیل کرده است. برای جزئیات بیشتر، به مخزن گیت‌هاب پروژه سر بزنید!",
     "slug": "course-online-shop",
-    "imageUrl": "/images/portfolios/portfolio-placeholder.svg",
-    "technologies": ["React", "Tailwind-CSS", "Node.js", "Express", "MongoDB"]
+    "images": [],
+    "technologies": ["React", "Tailwind-CSS", "Node.js", "Express", "MongoDB"],
+    "status": "archived",
+    "githubUrl": "",
+    "demoUrl": ""
   },
   {
     "title": "Three.js catapult game",
-    "summary": "This is a portfolio description",
-    "description": "This is a portfolio description",
+    "summary": "بازی سه‌بعدی منجنیق (Catapult)، ساخته‌شده با Three.js و Vite، یک تجربه هیجان‌انگیز و جذاب است که در آن بازیکنان می‌توانند از میان چهار سطح با دشواری‌های مختلف انتخاب کنند، قدرت پرتاب منجنیق را تنظیم کرده و با پرتابه‌ها دشمنان را شکست دهند. این پروژه با استفاده از Cannon.js برای فیزیک واقع‌گرایانه، رابط کاربری پاسخ‌گو و گرافیک سه‌بعدی روان، یک نمونه برجسته از مهارت‌های توسعه وب و بازی‌سازی است. کد منبع باز این بازی در GitHub در دسترس است و امکان مشارکت و تجربه آن به‌صورت آنلاین از طریق دموی زنده فراهم شده است.",
     "slug": "three.js-catapult-game",
-    "imageUrl": "/images/portfolios/portfolio-placeholder.svg",
-    "technologies": ["Javascript", "HTML", "CSS", "Three.js"]
+    "images": [],
+    "technologies": ["Javascript", "HTML", "CSS", "Three.js"],
+    "status": "on-hold",
+    "githubUrl": "",
+    "demoUrl": ""
   },
   {
     "title": "Todo list",
-    "summary": "A simple Todo List app built with React, Redux, and TypeScript to warm up and practice core concepts. This project focuses on integrating Redux Toolkit with TypeScript for efficient state management and type safety.",
-    "description": "This is a portfolio description",
+    "summary": "این پروژه یک برنامه لیست وظایف (Todo List) ساده اما مدرن است که با استفاده از React، Redux Toolkit، TypeScript و Vite ساخته شده و به‌عنوان تمرینی برای تسلط بر مفاهیم اصلی این فناوری‌ها طراحی شده است. این اپلیکیشن امکان افزودن وظایف با عنوان و یادداشت، رابط کاربری جذاب با پشتیبانی از تم‌های روشن و تیره، و پیاده‌سازی ایمن با TypeScript را فراهم می‌کند. مدیریت حالت با Redux Toolkit به‌صورت کارآمد انجام شده و از روش‌های مدرن React و هوک‌ها بهره گرفته شده است. برای مشاهده دمو یا مشارکت در پروژه، می‌توانید به مخزن گیت‌هاب یا لینک دموی زنده مراجعه کنید.",
     "slug": "todo-list",
-    "imageUrl": "/images/portfolios/portfolio-placeholder.svg",
+    "images": [],
     "technologies": [
       "React",
       "Redux",
       "Redux-Toolkit",
       "Javascript",
       "Typescript"
-    ]
+    ],
+    "status": "archived",
+    "githubUrl": "",
+    "demoUrl": ""
+  },
+  {
+    "title": "Booking hotel",
+    "summary": "پروژه رزرو هتل فرانت‌اند یک اپلیکیشن مدرن و واکنش‌گرا برای رزرو هتل است که با استفاده از Vite، React و React Router توسعه یافته است. این پروژه با یک رابط کاربری تمیز و جمع و جور، امکان جستجو و فیلتر هتل‌ها بر اساس تعداد اتاق‌ها، تجربه رزرو یکپارچه و طراحی واکنش‌گرا برای دستگاه‌های موبایل و دسک‌تاپ را فراهم می‌کند. با بهره‌گیری از فناوری‌هایی مانند Axios برای درخواست‌های API و ESLint برای لینتینگ کد، این اپلیکیشن عملکرد سریع و بهینه‌ای ارائه می‌دهد. برای اطلاعات بیشتر و مشاهده دمو، به مخزن گیت‌هاب یا لینک دمو مراجعه کنید.",
+    "slug": "booking-hotel",
+    "images": [],
+    "technologies": ["React", "Javascript", "HTML", "CSS"],
+    "status": "archived",
+    "githubUrl": "",
+    "demoUrl": ""
   },
   {
     "title": "Responsive personal portfolio website",
-    "summary": "Responsive personal portfolio website using HTML CSS Javascript",
-    "description": "This is a portfolio description",
+    "summary": "این پروژه یک وب‌سایت پرتفولیوی شخصی کاملاً واکنش‌گرا است که با استفاده از HTML5، CSS3 و جاوااسکریپت ساخته شده و مهارت‌ها، پروژه‌ها و مسیر حرفه‌ای من به‌عنوان یک توسعه‌دهنده وب را به نمایش می‌گذارد. این وب‌سایت با طراحی مدرن، رابط کاربری جذاب و انیمیشن‌های روان، تجربه کاربری بی‌نظیری ارائه می‌دهد و برای تمامی دستگاه‌ها بهینه‌سازی شده است. اگرچه این سایت دیگر پرتفولیوی فعال من نیست، اما به‌عنوان نمونه‌ای از کارم در دسترس است و می‌تواند برای استفاده شخصی شما سفارشی شود یا به‌عنوان یک الگو برای پرتفولیوی خود استفاده گردد.",
     "slug": "responsive-personal-portfolio-website",
-    "imageUrl": "/images/portfolios/portfolio-placeholder.svg",
-    "technologies": ["Javascript", "HTML", "CSS"]
+    "images": [],
+    "technologies": ["Javascript", "HTML", "CSS"],
+    "status": "archived",
+    "githubUrl": "",
+    "demoUrl": ""
   },
   {
     "title": "WooCommerce API panel",
-    "summary": "A panel to help list products and price bulk edit them",
-    "description": "This is a portfolio description",
+    "summary": "پنل مدیریت ووکامرس یک ابزار قدرتمند و متن‌باز است که با استفاده از API ووکامرس طراحی شده و امکاناتی نظیر نمایش لیست محصولات، فیلتر کردن محصولات بر اساس دسته‌بندی، جستجوی محصولات بر اساس نام و ویرایش گروهی قیمت‌ها (به‌صورت دستی یا با استفاده از فرمول بر اساس دسته‌بندی) را فراهم می‌کند. این پروژه که با PHP 7.4 و بوت‌استرپ 5 توسعه یافته، با نصب آسان در ساب‌دامین و تنظیم متغیرهای محیطی در فایل .env، به مدیران فروشگاه‌های آنلاین کمک می‌کند تا مدیریت محصولات خود را به‌صورت کارآمد و سریع انجام دهند.",
     "slug": "wc-api-panel",
-    "imageUrl": "/images/portfolios/portfolio-placeholder.svg",
-    "technologies": ["PHP", "Javascript", "Bootstrap", "HTML", "CSS"]
+    "images": [],
+    "technologies": ["PHP", "Javascript", "Bootstrap", "HTML", "CSS"],
+    "status": "archived",
+    "githubUrl": "",
+    "demoUrl": ""
   },
   {
     "title": "WooCommerce sync with 3p API",
-    "summary": "Wordpress plugin that can be used to sync WooCommerce with a 3rd party API",
-    "description": "This is a portfolio description",
+    "summary": "افزونه WC Sync with Third Party API یک ابزار قدرتمند برای وردپرس است که امکان همگام‌سازی داده‌های محصولات ووکامرس با API شخص ثالث را فراهم می‌کند. این افزونه با رابط کاربری ساده، قابلیت به‌روزرسانی دستی و خودکار روزانه محصولات، مدیریت امن کلیدهای API، و ثبت تاریخچه به‌روزرسانی‌ها در جدول پایگاه داده اختصاصی را ارائه می‌دهد. با پشتیبانی از امنیت بالا، مانند استفاده از nonce برای درخواست‌های AJAX و کنترل دسترسی، این افزونه برای توسعه‌دهندگان و مدیران فروشگاه‌های آنلاین گزینه‌ای مناسب است.",
     "slug": "wc-sync-with-3p-API ",
-    "imageUrl": "/images/portfolios/portfolio-placeholder.svg",
-    "technologies": ["PHP", "Javascript", "HTML", "CSS"]
+    "images": [],
+    "technologies": ["PHP", "Javascript", "HTML", "CSS"],
+    "status": "archived",
+    "githubUrl": "",
+    "demoUrl": ""
   }
 ]

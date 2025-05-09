@@ -1,3 +1,4 @@
+import { PortfolioType } from "@/types/portfolio";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -5,45 +6,49 @@ import Link from "next/link";
 export default function PortfolioCard({
   portfolio,
 }: {
-  portfolio: {
-    title: string;
-    summary: string;
-    description: string;
-    slug: string;
-    imageUrl: string;
-    technologies: string[];
-  };
+  portfolio: PortfolioType;
 }) {
-  const { title, summary, slug, imageUrl, technologies } = portfolio;
+  const { title, summary, slug, images, technologies } = portfolio;
 
   return (
-    <div className="card lg:card-side bg-neutral text-neutral-content shadow-lg rounded-xl">
-      <figure>
-        <Image src={imageUrl} alt={title} width={500} height={500} />
-      </figure>
-      <div className="card-body">
-        <h2 className="card-title">{title}</h2>
-        <p>{summary}</p>
-        <div>
-          {technologies.map((technology) => (
+    <Link href={`/portfolios/${slug}`} target="_blank" className="block">
+      <div className="card lg:card-side bg-base-200 border border-base-200 hover:border-neutral shadow-lg rounded-xl transition">
+        <figure className="w-full lg:w-1/3 h-64 lg:h-auto">
+          <Image
+            src={images?.[0] ?? "/images/portfolios/portfolio-placeholder.svg"}
+            alt={title}
+            width={500}
+            height={500}
+            className="w-full h-full object-cover"
+          />
+        </figure>
+
+        <div className="card-body w-full lg:w-2/3">
+          <h2 className="card-title group-hover:underline">{title}</h2>
+          <p>{summary}</p>
+
+          <div className="flex flex-wrap mt-2">
+            {technologies.map((technology) => (
+              <span
+                key={technology}
+                className="badge badge-secondary badge-sm m-2 py-3 px-4"
+              >
+                {technology}
+              </span>
+            ))}
+          </div>
+
+          <div className="card-actions justify-end mt-4">
             <span
-              key={technology}
-              className="badge badge-secondary badge-sm m-2 py-3 px-4"
+              className="btn btn-primary"
+              role="presentation"
+              aria-hidden="true"
             >
-              {technology}
+              <ExternalLink className="w-5 h-5" />
             </span>
-          ))}
-        </div>
-        <div className="card-actions justify-end">
-          <Link
-            href={`/portfolios/${slug}`}
-            target="_blank"
-            className="btn btn-primary"
-          >
-            <ExternalLink className="w-5 h-5" />
-          </Link>
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

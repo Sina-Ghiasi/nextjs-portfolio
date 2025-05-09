@@ -1,6 +1,7 @@
+import NavLinkList from "@/components/NavLinkList";
 import Image from "next/image";
 import Link from "next/link";
-import NavLinkList from "./NavLinkList";
+import linkList from "@/data/linkList.json";
 
 export default function Footer() {
   return (
@@ -22,7 +23,10 @@ export default function Footer() {
 
         {/* second section */}
         <nav>
-          <NavLinkList className="flex flex-row gap-2 md:gap-4" />
+          <NavLinkList
+            className="flex flex-row gap-2 md:gap-4"
+            linkList={linkList}
+          />
         </nav>
 
         {/* third section */}

@@ -23,7 +23,7 @@ export const geometries = [
     rate: 0.6,
   },
   {
-    geometry: new CapsuleGeometry(0.6, 1.2, 4, 16),
+    geometry: new CapsuleGeometry(0.5, 1, 4, 16),
     position: [1, -0.75, 3],
     rate: 0.6,
   },

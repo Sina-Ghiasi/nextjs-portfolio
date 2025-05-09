@@ -9,44 +9,47 @@ export default function ProfileAnimation() {
 
   useGSAP(
     () => {
-      const t1 = gsap.timeline();
-      t1.fromTo(
+      // Set initial visibility to avoid FCP delays
+      gsap.set([".img", ".name", ".job-title"], { visibility: "visible" });
+
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+      tl.fromTo(
         ".img",
+        { opacity: 0, scale: 1.3, y: 30 },
         {
-          autoAlpha: 0,
-          y: -30,
-        },
-        {
-          y: 0,
-          autoAlpha: 1,
-          duration: 1,
-          ease: "expo.out",
-        }
-      );
-      t1.fromTo(
-        ".name",
-        {
-          autoAlpha: 0,
-          y: -20,
-        },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 1,
-          stagger: 0.5,
-          ease: "power1.in",
-        }
-      );
-      t1.fromTo(
-        ".job-title",
-        { y: -40, autoAlpha: 0, scale: 0.2 },
-        {
-          y: 0,
-          autoAlpha: 1,
+          opacity: 1,
           scale: 1,
-          duration: 1,
+          y: 0,
+          duration: 1.6,
           ease: "expo.out",
-        }
+        },
+        0
+      );
+
+      tl.fromTo(
+        ".name",
+        { opacity: 0, x: -30, rotation: -10 },
+        {
+          opacity: 1,
+          x: 0,
+          rotation: 0,
+          duration: 0.6,
+          ease: "power2.out",
+        },
+        0.4
+      );
+
+      tl.fromTo(
+        ".job-title",
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "elastic.out(1, 0.8)",
+        },
+        0.8
       );
     },
     { scope: container }
@@ -62,7 +65,7 @@ export default function ProfileAnimation() {
         alt="سینا قیاسی"
         width={512}
         height={512}
-        className="img invisible mx-auto mb-2 w-[256px] lg:w-[300px] h-auto"
+        className="img mx-auto mb-2 w-[256px] lg:w-[300px] h-auto"
         style={{
           maskImage:
             "linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)",
@@ -70,15 +73,10 @@ export default function ProfileAnimation() {
         priority
       />
 
-      <h1
-        className="text-[clamp(2.5rem,6vmin,6rem)] font-extrabold "
-        aria-label="سینا قیاسی"
-      >
-        <span className="name invisible text-base-content">سینا</span>
-        &nbsp;
-        <span className="name invisible text-base-content">قیاسی</span>
+      <h1 className="name text-[clamp(2.5rem,6vmin,6rem)] font-extrabold">
+        سینا قیاسی
       </h1>
-      <div className="job-title invisible text-[clamp(1rem,3vmin,3rem)] font-bold text-primary">
+      <div className="job-title text-[clamp(1rem,3vmin,3rem)] font-bold text-primary">
         یک توسعه دهنده خلاق وب
       </div>
     </div>
