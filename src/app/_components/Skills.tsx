@@ -1,7 +1,8 @@
-import developToolsData from "@/data/developTools.json";
+import { getAllDevToolsFromDb } from "@/lib/db/queries/devTools";
 import Image from "next/image";
 
-export default function Skills() {
+export default async function Skills() {
+  const devTools = await getAllDevToolsFromDb();
   return (
     <section className="flex flex-col mx-4 lg:mx-8 mb-8 md:mb-16">
       <h3 className="font-extrabold text-2xl text-center mb-2">مهارت ها</h3>
@@ -9,7 +10,7 @@ export default function Skills() {
         مهارت ها، ابزار ها و تکنولوژی هایی که استفاده می کنم.
       </p>
       <div className="flex flex-wrap justify-center gap-x-8 md:gap-x-16 gap-y-8">
-        {developToolsData.map((tool) => (
+        {devTools.map((tool) => (
           <div
             className="flex flex-col gap-2 items-center min-w-16 md:min-w-24 "
             key={tool.name}

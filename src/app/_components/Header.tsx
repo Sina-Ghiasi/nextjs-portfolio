@@ -3,9 +3,11 @@ import { Menu } from "lucide-react";
 import Image from "next/image";
 import NavLinkList from "@/components/NavLinkList";
 import ThemeSwitchButton from "@/components/ThemeSwitchButton";
-import linkList from "@/data/linkList.json";
+import { getAllNavLinksFromDb } from "@/lib/db/queries/navLinks";
 
-export default function Header() {
+export default async function Header() {
+  const navLinks = await getAllNavLinksFromDb();
+
   return (
     <header className="navbar bg-base-100 border-b border-neutral lg:px-4">
       <div className="navbar-start">
@@ -14,7 +16,7 @@ export default function Header() {
             <Menu className="w-6 h-6" />
           </div>
           <NavLinkList
-            linkList={linkList}
+            linkList={navLinks}
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           />
@@ -33,11 +35,19 @@ export default function Header() {
       </div>
 
       <div className="navbar-center hidden lg:flex">
-        <NavLinkList linkList={linkList} className="flex flex-row gap-4" />
+        <NavLinkList linkList={navLinks} className="flex flex-row gap-4" />
       </div>
 
       <div className="navbar-end">
-        <a className="btn btn-xs sm:btn-sm btn-primary mx-4">دریافت رزومه</a>
+        <a
+          href="https://storage.sinaghiasi.ir/Sina-Ghiasi-general-resume.pdf"
+          className="btn btn-xs sm:btn-sm btn-primary mx-4"
+          target="_blank"
+          rel="noopener"
+        >
+          دریافت رزومه
+        </a>
+
         <ThemeSwitchButton />
       </div>
     </header>

@@ -1,8 +1,8 @@
-import FAQs from "@/components/FAQs";
-import Hero from "app/_components/Hero";
-import Portfolios from "app/_components/Portfolios";
-import Skills from "@/components/Skills";
+import Hero from "./_components/Hero";
+import Skills from "./_components/Skills";
 import Benefits from "./_components/Benefits";
+import Projects from "./_components/Projects";
+import FAQs from "./_components/FAQs";
 
 export default function HomePage() {
   return (
@@ -10,7 +10,7 @@ export default function HomePage() {
       <Hero />
       <Skills />
       <Benefits />
-      <Portfolios />
+      <Projects />
       <FAQs />
     </>
   );

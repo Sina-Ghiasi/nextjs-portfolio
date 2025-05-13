@@ -1,11 +1,9 @@
-import PortfolioCard from "@/components/PortfolioCard";
-import { PortfolioType } from "@/types/portfolio";
 import Link from "next/link";
-import portfolios from "@/data/portfolios.json";
+import ProjectCard from "@/components/ProjectCard";
+import { getAllProjectsFromDb } from "@/lib/db/queries/projects";
 
-const typedPortfolios: PortfolioType[] = portfolios as PortfolioType[];
-
-export default function Portfolios() {
+export default async function Projects() {
+  const projects = await getAllProjectsFromDb();
   return (
     <section className="flex flex-col mx-4 lg:mx-8 mb-8 md:mb-16">
       <h3 className="font-extrabold text-2xl mb-2 text-center">
@@ -16,11 +14,11 @@ export default function Portfolios() {
         مهارت و تجربه من در توسعه وب است.
       </p>
       <div className="flex flex-col gap-8 mb-8">
-        {typedPortfolios.slice(0, 4).map((portfolio) => (
-          <PortfolioCard key={portfolio.slug} portfolio={portfolio} />
+        {projects.slice(0, 3).map((project) => (
+          <ProjectCard key={project.slug} project={project} />
         ))}
       </div>
-      <Link href={"/portfolios"} className="self-center btn btn-primary">
+      <Link href={"/projects"} className="self-center btn btn-primary">
         مشاهده همه
       </Link>
     </section>

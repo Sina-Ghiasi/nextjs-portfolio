@@ -1,21 +1,18 @@
-import { PortfolioType } from "@/types/portfolio";
+import { ProjectType } from "@/types/project";
+import { truncateString } from "@/utils/string";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function PortfolioCard({
-  portfolio,
-}: {
-  portfolio: PortfolioType;
-}) {
-  const { title, summary, slug, images, technologies } = portfolio;
+export default function ProjectCard({ project }: { project: ProjectType }) {
+  const { title, description, slug, images, technologies } = project;
 
   return (
-    <Link href={`/portfolios/${slug}`} target="_blank" className="block">
+    <Link href={`/projects/${slug}`} target="_blank" className="block">
       <div className="card lg:card-side bg-base-200 border border-base-200 hover:border-neutral shadow-lg rounded-xl transition">
         <figure className="w-full lg:w-1/3 h-64 lg:h-auto">
           <Image
-            src={images?.[0] ?? "/images/portfolios/portfolio-placeholder.svg"}
+            src={images?.[0] ?? "/images/projects/placeholder.svg"}
             alt={title}
             width={500}
             height={500}
@@ -25,7 +22,7 @@ export default function PortfolioCard({
 
         <div className="card-body w-full lg:w-2/3">
           <h2 className="card-title group-hover:underline">{title}</h2>
-          <p>{summary}</p>
+          <p>{truncateString(description, 300)}</p>
 
           <div className="flex flex-wrap mt-2">
             {technologies.map((technology) => (

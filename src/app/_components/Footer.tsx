@@ -1,9 +1,10 @@
 import NavLinkList from "@/components/NavLinkList";
+import { getAllNavLinksFromDb } from "@/lib/db/queries/navLinks";
 import Image from "next/image";
 import Link from "next/link";
-import linkList from "@/data/linkList.json";
 
-export default function Footer() {
+export default async function Footer() {
+  const navLinks = await getAllNavLinksFromDb();
   return (
     <footer className="bg-base-100 text-base-content border-t border-neutral">
       <div className="flex flex-col md:flex-row gap-4 justify-between items-center p-4">
@@ -25,7 +26,7 @@ export default function Footer() {
         <nav>
           <NavLinkList
             className="flex flex-row gap-2 md:gap-4"
-            linkList={linkList}
+            linkList={navLinks}
           />
         </nav>
 

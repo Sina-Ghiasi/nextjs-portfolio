@@ -9,10 +9,7 @@ export default function ProfileAnimation() {
 
   useGSAP(
     () => {
-      // Set initial visibility to avoid FCP delays
-      gsap.set([".img", ".name", ".job-title"], { visibility: "visible" });
-
-      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+      const tl = gsap.timeline();
 
       tl.fromTo(
         ".img",
@@ -21,7 +18,7 @@ export default function ProfileAnimation() {
           opacity: 1,
           scale: 1,
           y: 0,
-          duration: 1.6,
+          duration: 0.8,
           ease: "expo.out",
         },
         0
@@ -34,8 +31,8 @@ export default function ProfileAnimation() {
           opacity: 1,
           x: 0,
           rotation: 0,
-          duration: 0.6,
-          ease: "power2.out",
+          duration: 0.8,
+          ease: "expo.inOut",
         },
         0.4
       );
@@ -46,7 +43,7 @@ export default function ProfileAnimation() {
         {
           opacity: 1,
           y: 0,
-          duration: 1,
+          duration: 0.8,
           ease: "elastic.out(1, 0.8)",
         },
         0.8
@@ -65,7 +62,7 @@ export default function ProfileAnimation() {
         alt="سینا قیاسی"
         width={512}
         height={512}
-        className="img mx-auto mb-2 w-[256px] lg:w-[300px] h-auto"
+        className="img mx-auto mb-2 w-[256px] lg:w-[300px] h-auto opacity-0"
         style={{
           maskImage:
             "linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)",
@@ -73,10 +70,10 @@ export default function ProfileAnimation() {
         priority
       />
 
-      <h1 className="name text-[clamp(2.5rem,6vmin,6rem)] font-extrabold">
+      <h1 className="name text-[clamp(2.5rem,6vmin,6rem)] font-extrabold opacity-0">
         سینا قیاسی
       </h1>
-      <div className="job-title text-[clamp(1rem,3vmin,3rem)] font-bold text-primary">
+      <div className="job-title text-[clamp(1rem,3vmin,3rem)] font-bold text-primary opacity-0">
         یک توسعه دهنده خلاق وب
       </div>
     </div>

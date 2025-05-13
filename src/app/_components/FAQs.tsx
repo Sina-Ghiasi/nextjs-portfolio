@@ -1,8 +1,8 @@
-import faqs from "@/data/faqs.json";
+import { getAllFaqsFromDb } from "@/lib/db/queries/faqs";
 import { CircleHelp, Rocket } from "lucide-react";
-import Link from "next/link";
 
-export default function FAQs() {
+export default async function FAQs() {
+  const faqs = await getAllFaqsFromDb();
   return (
     <section className="flex flex-col mx-4 lg:mx-8 mb-8 md:mb-16">
       <h3 className="font-extrabold text-2xl mb-2 text-center">
@@ -37,9 +37,14 @@ export default function FAQs() {
             طراحی وب شما گفتگو کنیم و رؤیای دیجیتال شما را به واقعیت تبدیل کنیم!
             <Rocket className="inline-block mx-2 w-5 h-5 text-primary hover:text-accent" />
           </p>
-          <Link href="/contact" className="btn btn-block btn-primary">
+          <a
+            href="https://t.me/SinaGhiasi_BA"
+            className="btn btn-block btn-primary"
+            target="_blank"
+            rel="noopener"
+          >
             ارتباط با من
-          </Link>
+          </a>
         </div>
       </div>
     </section>
