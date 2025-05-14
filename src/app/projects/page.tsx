@@ -1,10 +1,12 @@
 import PortfolioCard from "@/components/ProjectCard";
 import { getAllProjectsFromDb } from "@/lib/db/queries/projects";
 
+export const revalidate = 432000; // 5 days
+
 export default async function ProjectsPage() {
   const projects = await getAllProjectsFromDb();
   return (
-    <section className="flex flex-col mx-4 lg:mx-8 my-8 md:my-16">
+    <section className="flex flex-col mx-5 lg:mx-8 my-8 md:my-12">
       <h3 className="font-extrabold text-2xl mb-2 text-center">
         پروژه‌های انجام شده
       </h3>

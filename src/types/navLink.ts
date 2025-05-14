@@ -8,4 +8,4 @@ export const NavLinkSchema = z.object({
 });
 export const NavLinkArraySchema = z.array(NavLinkSchema);
 
-export type NavLink = z.infer<typeof NavLinkSchema>;
+export type NavLinkType = z.infer<typeof NavLinkSchema>;

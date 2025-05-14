@@ -23,7 +23,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 - **Pre-styled Components** – Uses DaisyUI for consistency.
 - **Dark Mode Support** – Auto adapts to user preferences.
 - **Easily Customizable** – Modify colors, fonts, and sections effortlessly.
-- **Font Customization** – Uses **Estedad** and **Shabnam** fonts.
+- **Font Customization** – Uses **Estedad** and **Vazirmatn** fonts.
 
 ## 📜 License
 

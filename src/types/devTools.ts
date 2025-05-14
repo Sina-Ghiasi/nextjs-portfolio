@@ -8,4 +8,4 @@ export const DevToolSchema = z.object({
 });
 export const DevToolArraySchema = z.array(DevToolSchema);
 
-export type DevTool = z.infer<typeof DevToolSchema>;
+export type DevToolType = z.infer<typeof DevToolSchema>;

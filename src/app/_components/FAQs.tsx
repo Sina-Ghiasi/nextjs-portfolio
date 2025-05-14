@@ -4,7 +4,7 @@ import { CircleHelp, Rocket } from "lucide-react";
 export default async function FAQs() {
   const faqs = await getAllFaqsFromDb();
   return (
-    <section className="flex flex-col mx-4 lg:mx-8 mb-8 md:mb-16">
+    <section className="flex flex-col mx-5 lg:mx-8 mb-8 md:mb-16">
       <h3 className="font-extrabold text-2xl mb-2 text-center">
         سوالات متداول
       </h3>
@@ -14,7 +14,7 @@ export default async function FAQs() {
           {faqs.map((faq, index) => (
             <div
               key={faq.question}
-              className="collapse collapse-plus bg-base-100 mb-2"
+              className="collapse collapse-plus bg-base-100 mb-2 text-sm md:text-base"
             >
               <input
                 type="radio"
@@ -22,7 +22,7 @@ export default async function FAQs() {
                 defaultChecked={index === 0}
               />
               <div className="collapse-title font-medium">{faq.question}</div>
-              <div className="collapse-content text-sm">
+              <div className="collapse-content">
                 <p>{faq.answer}</p>
               </div>
             </div>

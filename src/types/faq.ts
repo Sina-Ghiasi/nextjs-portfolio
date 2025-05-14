@@ -6,4 +6,4 @@ export const FaqSchema = z.object({
 });
 export const FaqArraySchema = z.array(FaqSchema);
 
-export type Faq = z.infer<typeof FaqSchema>;
+export type FaqType = z.infer<typeof FaqSchema>;

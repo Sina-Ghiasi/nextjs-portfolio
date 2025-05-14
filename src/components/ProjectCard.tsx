@@ -3,12 +3,13 @@ import { truncateString } from "@/utils/string";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import Technologies from "./Technologies";
 
 export default function ProjectCard({ project }: { project: ProjectType }) {
   const { title, description, slug, images, technologies } = project;
 
   return (
-    <Link href={`/projects/${slug}`} target="_blank" className="block">
+    <Link href={`/projects/${slug}`} className="block">
       <div className="card lg:card-side bg-base-200 border border-base-200 hover:border-neutral shadow-lg rounded-xl transition">
         <figure className="w-full lg:w-1/3 h-64 lg:h-auto">
           <Image
@@ -22,26 +23,19 @@ export default function ProjectCard({ project }: { project: ProjectType }) {
 
         <div className="card-body w-full lg:w-2/3">
           <h2 className="card-title group-hover:underline">{title}</h2>
-          <p>{truncateString(description, 300)}</p>
+          <p className="text-sm lg:text-base">
+            {truncateString(description, 250)}
+          </p>
 
-          <div className="flex flex-wrap mt-2">
-            {technologies.map((technology) => (
-              <span
-                key={technology}
-                className="badge badge-secondary badge-sm m-2 py-3 px-4"
-              >
-                {technology}
-              </span>
-            ))}
-          </div>
+          <Technologies technologies={technologies} />
 
-          <div className="card-actions justify-end mt-4">
+          <div className="card-actions justify-end mt-3">
             <span
-              className="btn btn-primary"
+              className="btn btn-sm lg:btn-md btn-primary"
               role="presentation"
               aria-hidden="true"
             >
-              <ExternalLink className="w-5 h-5" />
+              <ExternalLink className="w-4 h-4  lg:w-5 lg:h-5" />
             </span>
           </div>
         </div>

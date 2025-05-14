@@ -4,6 +4,8 @@ import Benefits from "./_components/Benefits";
 import Projects from "./_components/Projects";
 import FAQs from "./_components/FAQs";
 
+export const revalidate = 432000; // 5 days
+
 export default function HomePage() {
   return (
     <>

@@ -8,7 +8,7 @@ export default {
     extend: {
       fontFamily: {
         estedad: ["var(--font-estedad)", "Arial", "sans-serif"],
-        shabnam: ["var(--font-shabnam)", "Tahoma", "sans-serif"],
+        vazirmatn: ["var(--font-vazirmatn)", "Tahoma", "sans-serif"],
       },
     },
   },
@@ -25,7 +25,7 @@ export default {
           "base-200": "#D1D5D6",
           "base-300": "#B0B7B8",
           info: "#53B6DD",
-          success: "#2DCC70",
+          success: "#76b900",
           warning: "#F1C40F",
           error: "#FE6347",
         },
@@ -38,7 +38,7 @@ export default {
           "base-200": "#1A1E29",
           "base-300": "#2F3648",
           info: "#53B6DD",
-          success: "#2DCC70",
+          success: "#76b900",
           warning: "#F1C40F",
           error: "#FE6347",
         },

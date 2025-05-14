@@ -5,7 +5,7 @@ import { getAllProjectsFromDb } from "@/lib/db/queries/projects";
 export default async function Projects() {
   const projects = await getAllProjectsFromDb();
   return (
-    <section className="flex flex-col mx-4 lg:mx-8 mb-8 md:mb-16">
+    <section className="flex flex-col mx-5 lg:mx-8 mb-8 md:mb-16">
       <h3 className="font-extrabold text-2xl mb-2 text-center">
         پروژه‌های انجام شده
       </h3>

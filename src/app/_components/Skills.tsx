@@ -4,7 +4,7 @@ import Image from "next/image";
 export default async function Skills() {
   const devTools = await getAllDevToolsFromDb();
   return (
-    <section className="flex flex-col mx-4 lg:mx-8 mb-8 md:mb-16">
+    <section className="flex flex-col mx-5 lg:mx-8 mb-8 md:mb-16">
       <h3 className="font-extrabold text-2xl text-center mb-2">مهارت ها</h3>
       <p className="text-sm text-center mb-8">
         مهارت ها، ابزار ها و تکنولوژی هایی که استفاده می کنم.

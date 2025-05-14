@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
 import estedadFont from "@/constants/estedadFont";
-import shabnamFont from "@/constants/shabnamFont";
+import vazirmatnFont from "@/constants/vazirmatnFont";
 import { Metadata } from "next";
 import Providers from "@/providers/Providers";
 import Header from "./_components/Header";
@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="fa" dir="rtl" suppressHydrationWarning>
       <body
-        className={`min-h-screen ${shabnamFont.variable} ${estedadFont.variable}`}
+        className={`min-h-screen ${vazirmatnFont.variable} ${estedadFont.variable}`}
       >
         <Providers>
           <Header />

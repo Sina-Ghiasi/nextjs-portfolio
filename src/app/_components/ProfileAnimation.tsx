@@ -31,7 +31,7 @@ export default function ProfileAnimation() {
           opacity: 1,
           x: 0,
           rotation: 0,
-          duration: 0.8,
+          duration: 1,
           ease: "expo.inOut",
         },
         0.4
@@ -43,7 +43,7 @@ export default function ProfileAnimation() {
         {
           opacity: 1,
           y: 0,
-          duration: 0.8,
+          duration: 1,
           ease: "elastic.out(1, 0.8)",
         },
         0.8
