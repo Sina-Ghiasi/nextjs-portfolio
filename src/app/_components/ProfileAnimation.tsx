@@ -63,6 +63,7 @@ export default function ProfileAnimation() {
           src="/images/profile-min.png"
           alt="سینا قیاسی"
           fill
+          sizes="(max-width: 768px) 80vw, 300px"
           className="img object-cover opacity-0"
           priority
           onLoad={() => setImageLoaded(true)}
