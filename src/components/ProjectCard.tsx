@@ -11,17 +11,17 @@ export default function ProjectCard({ project }: { project: ProjectType }) {
   return (
     <Link href={`/projects/${slug}`} className="block">
       <div className="card lg:card-side bg-base-200 border border-base-200 hover:border-neutral shadow-lg rounded-xl transition">
-        <figure className="w-full lg:w-1/3 h-64 lg:h-auto">
+        <figure className="w-full h-36 md:h-52 lg:h-auto bg-gray-200 relative overflow-hidden">
           <Image
             src={images?.[0] ?? "/images/projects/placeholder.svg"}
             alt={title}
-            width={500}
-            height={500}
-            className="w-full h-full object-cover"
+            fill
+            sizes="(max-width: 768px) 100vw, 800px"
+            className="object-cover aspect-video"
           />
         </figure>
 
-        <div className="card-body w-full lg:w-2/3">
+        <div className="card-body w-full">
           <h2 className="card-title group-hover:underline">{title}</h2>
           <p className="text-sm lg:text-base">
             {truncateString(description, 250)}

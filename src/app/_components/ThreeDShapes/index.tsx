@@ -84,7 +84,7 @@ function Geometry({
         });
       }
     },
-    { scope: meshRef }
+    { scope: meshRef },
   );
 
   function getRandomMaterial() {

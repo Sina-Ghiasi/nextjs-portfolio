@@ -40,7 +40,7 @@ export default async function Header() {
 
       <div className="navbar-end">
         <a
-          href="https://storage.sinaghiasi.ir/Sina-Ghiasi-general-resume.pdf"
+          href={process.env.NEXT_PUBLIC_RESUME_URL}
           className="btn btn-xs sm:btn-sm btn-primary mx-4"
           target="_blank"
           rel="noopener"

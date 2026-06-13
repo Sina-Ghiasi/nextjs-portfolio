@@ -1,27 +1,28 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 
 export default function ProfileAnimation() {
   const container = useRef<HTMLDivElement>(null);
-
+  const [imageLoaded, setImageLoaded] = useState(false);
   useGSAP(
     () => {
+      if (!imageLoaded) return;
+
       const tl = gsap.timeline();
 
       tl.fromTo(
         ".img",
-        { opacity: 0, scale: 1.3, y: 30 },
+        { opacity: 0, scale: 1.1 },
         {
           opacity: 1,
           scale: 1,
-          y: 0,
           duration: 0.8,
           ease: "expo.out",
         },
-        0
+        0,
       );
 
       tl.fromTo(
@@ -34,7 +35,7 @@ export default function ProfileAnimation() {
           duration: 1,
           ease: "expo.inOut",
         },
-        0.4
+        0.4,
       );
 
       tl.fromTo(
@@ -46,10 +47,10 @@ export default function ProfileAnimation() {
           duration: 1,
           ease: "elastic.out(1, 0.8)",
         },
-        0.8
+        0.8,
       );
     },
-    { scope: container }
+    { scope: container, dependencies: [imageLoaded] },
   );
 
   return (
@@ -57,18 +58,17 @@ export default function ProfileAnimation() {
       className="flex flex-col gap-2 text-center overflow-hidden mt-4"
       ref={container}
     >
-      <Image
-        src={"/images/profile-min.png"}
-        alt="سینا قیاسی"
-        width={512}
-        height={512}
-        className="img mx-auto mb-2 w-[256px] lg:w-[300px] h-auto opacity-0"
-        style={{
-          maskImage:
-            "linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)",
-        }}
-        priority
-      />
+      <div className="relative mx-auto mb-2 w-[256px] lg:w-[300px] h-[256px] lg:h-[300px] overflow-hidden">
+        <Image
+          src="/images/profile-min.png"
+          alt="سینا قیاسی"
+          fill
+          className="img object-cover opacity-0"
+          priority
+          onLoad={() => setImageLoaded(true)}
+        />
+        <div className="absolute inset-x-0 bottom-0 h-1/5 bg-gradient-to-t from-base-100 to-transparent pointer-events-none" />
+      </div>
 
       <h1 className="name text-[clamp(2.5rem,6vmin,6rem)] font-extrabold opacity-0">
         سینا قیاسی

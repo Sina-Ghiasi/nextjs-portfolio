@@ -86,16 +86,16 @@ export default async function ProjectPage({
   return (
     <>
       <section className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start mx-5 lg:mx-8 my-8 md:my-12">
-        <div className="relative w-full h-80">
-          <Image
-            src={images?.[0] ?? "/images/projects/placeholder.svg"}
-            alt={title}
-            fill
-            className="object-cover rounded-xl"
-            sizes="(max-width: 768px) 100vw, 800px"
-            priority
-          />
-        </div>
+        <Image
+          src={images?.[0] ?? "/images/projects/placeholder.svg"}
+          alt={title}
+          width={600}
+          height={450}
+          className="rounded-xl w-full h-auto"
+          sizes="(max-width: 768px) 100vw, 800px"
+          priority
+        />
+
         <div className="space-y-6">
           <h1 className="text-2xl lg:text-4xl font-bold">{title}</h1>
           <div className="flex gap-2 items-center">
@@ -105,8 +105,8 @@ export default async function ProjectPage({
                 status === "active"
                   ? "badge-success"
                   : status === "on-hold"
-                  ? "badge-warning"
-                  : "badge-neutral"
+                    ? "badge-warning"
+                    : "badge-neutral"
               }`}
             >
               {status}
