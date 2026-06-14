@@ -1,33 +1,35 @@
 "use client";
 import { Mesh, Material, BufferGeometry } from "three";
 import { Canvas, ThreeEvent } from "@react-three/fiber";
-import { ContactShadows, Float, Environment } from "@react-three/drei";
-import { Suspense, useEffect, useRef, useState } from "react";
+import { ContactShadows, Float, Environment, Html } from "@react-three/drei";
+import { Suspense, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { geometries } from "./geometries";
 import { materials } from "./materials";
 import useSound from "@/hooks/useSounds";
+import { suspend } from "suspend-react";
+import Loading from "@/components/Loading";
+const bridgeHDRI = () =>
+  import("@pmndrs/assets/hdri/bridge.exr").then((module) => module.default);
 
 export default function ThreeDShapes() {
-  const [hdri, setHdri] = useState<string | null>(null);
-
-  useEffect(() => {
-    import("@pmndrs/assets/hdri/bridge.exr")
-      .then((module) => setHdri(module.default))
-      .catch((err) => console.error("Failed to load HDRI:", err));
-  }, []);
-
   return (
-    <div className="h-[300px] md:h-full max-h-[600px]">
+    <div className="h-[300px] md:h-full max-h-[500px]">
       <Canvas
         className="z-0"
         shadows
         gl={{ antialias: false }}
         dpr={[1, 1.5]}
-        camera={{ position: [0, 0, 20], fov: 30, near: 1, far: 40 }}
+        camera={{ position: [0, 0, 21], fov: 30, near: 1, far: 40 }}
       >
-        <Suspense fallback={null}>
+        <Suspense
+          fallback={
+            <Html>
+              <Loading size="lg" />
+            </Html>
+          }
+        >
           <Geometries />
           <ContactShadows
             position={[0, -3.5, 0]}
@@ -36,7 +38,7 @@ export default function ThreeDShapes() {
             blur={1}
             far={9}
           />
-          {hdri && <Environment files={hdri} />}
+          <Environment files={suspend(bridgeHDRI)} />
         </Suspense>
       </Canvas>
     </div>
@@ -68,7 +70,8 @@ function Geometry({
 }) {
   const meshRef = useRef<Mesh>(null);
   const [visible, setVisible] = useState(false);
-  const knockSound = useSound("/sounds/knock.ogg");
+  const playKnockSound = useSound("/sounds/knock.ogg");
+  const [initialMaterial] = useState(() => gsap.utils.random(materials));
 
   useGSAP(
     () => {
@@ -92,9 +95,8 @@ function Geometry({
   }
 
   function handleClick(e: ThreeEvent<MouseEvent>) {
-    if (knockSound) {
-      knockSound.play();
-    }
+    playKnockSound();
+
     if (e.object instanceof Mesh) {
       gsap.to(e.object.rotation, {
         x: `+=${gsap.utils.random(0, 2)}`,
@@ -125,7 +127,7 @@ function Geometry({
       >
         <mesh
           geometry={geometry}
-          material={getRandomMaterial()}
+          material={initialMaterial}
           visible={visible}
           onClick={handleClick}
           onPointerOver={handleMouseOver}

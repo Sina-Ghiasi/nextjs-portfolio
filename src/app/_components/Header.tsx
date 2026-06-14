@@ -15,11 +15,17 @@ export default async function Header() {
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <Menu className="w-6 h-6" />
           </div>
-          <NavLinkList
-            linkList={navLinks}
+
+          <ul
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
-          />
+          >
+            {navLinks.map((link) => (
+              <li key={link.href} className="mx-1">
+                <Link href={link.href}>{link.title}</Link>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <Link href="/">
@@ -34,7 +40,7 @@ export default async function Header() {
         </Link>
       </div>
 
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-center hidden lg:block">
         <NavLinkList linkList={navLinks} className="flex flex-row gap-4" />
       </div>
 
