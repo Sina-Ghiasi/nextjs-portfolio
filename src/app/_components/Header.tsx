@@ -18,7 +18,7 @@ export default async function Header() {
 
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            className="menu dropdown-content bg-base-100 rounded-box z-1 mt-3 min-w-32 p-2 shadow-sm"
           >
             {navLinks.map((link) => (
               <li key={link.href} className="mx-1">

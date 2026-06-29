@@ -12,20 +12,17 @@ export default async function FAQs() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="md:col-span-2 p-4 lg:p-6 bg-base-200 rounded-xl">
           {faqs.map((faq, index) => (
-            <div
+            <details
               key={faq.question}
               className="collapse collapse-plus bg-base-100 mb-2 text-sm md:text-base"
+              name={faq.question}
+              open={index === 0}
             >
-              <input
-                type="radio"
-                name="faq-accordion"
-                defaultChecked={index === 0}
-              />
-              <div className="collapse-title font-medium">{faq.question}</div>
-              <div className="collapse-content">
-                <p>{faq.answer}</p>
-              </div>
-            </div>
+              <summary className="collapse-title font-medium">
+                {faq.question}
+              </summary>
+              <p className="collapse-content">{faq.answer}</p>
+            </details>
           ))}
         </div>
         <div className="flex flex-col items-center gap-y-4 self-start p-6 bg-base-200 rounded-xl ">

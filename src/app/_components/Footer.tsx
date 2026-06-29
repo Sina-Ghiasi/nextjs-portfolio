@@ -9,7 +9,7 @@ export default async function Footer() {
     <footer className="bg-base-100 text-base-content border-t border-neutral">
       <div className="flex flex-col md:flex-row gap-4 justify-between items-center p-4">
         {/* first section */}
-        <div className="md:w-[150px] lg:w-[200px]">
+        <div className="md:w-37.5 lg:w-50">
           <Link href="/">
             <Image
               src="/logos/sina-ghiasi.svg"
@@ -31,7 +31,7 @@ export default async function Footer() {
         </nav>
 
         {/* third section */}
-        <nav className="flex gap-4 justify-end md:w-[150px]  lg:w-[200px]">
+        <nav className="flex gap-4 justify-end md:w-37.5 lg:w-50">
           <Link
             href={"https://github.com/sina-ghiasi"}
             target="_blank"

@@ -68,7 +68,7 @@ export default function ProfileAnimation() {
           priority
           onLoad={() => setImageLoaded(true)}
         />
-        <div className="absolute inset-x-0 bottom-0 h-1/5 bg-gradient-to-t from-base-100 to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-1/5 bg-linear-to-t from-base-100 to-transparent pointer-events-none" />
       </div>
 
       <h1 className="name text-[clamp(2.5rem,6vmin,6rem)] font-extrabold opacity-0">

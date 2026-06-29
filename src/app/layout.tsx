@@ -27,7 +27,7 @@ export default function RootLayout({
       >
         <Providers>
           <Header />
-          <main className="container xl:max-w-screen-xl mx-auto">
+          <main className="container xl:max-w-(--breakpoint-xl) mx-auto">
             {children}
           </main>
           <Footer />

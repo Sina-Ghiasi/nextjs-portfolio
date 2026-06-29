@@ -1,6 +1,57 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: false;
+}
+
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+
+  --color-primary: #690dac;
+  --color-secondary: #013c51;
+  --color-accent: #a2c519;
+  --color-neutral: #b7c0c1;
+
+  --color-base-100: #e6e7e7;
+  --color-base-200: #d1d5d6;
+  --color-base-300: #b0b7b8;
+
+  --color-info: #53b6dd;
+  --color-success: #76b900;
+  --color-warning: #f1c40f;
+  --color-error: #fe6347;
+}
+
+@plugin "daisyui/theme" {
+  name: "dark";
+  default: false;
+  prefersdark: true;
+  color-scheme: dark;
+
+  --color-primary: #9540ff;
+  --color-secondary: #006d5a;
+  --color-accent: #c9f420;
+  --color-neutral: #2a303f;
+
+  --color-base-100: #0d0f16;
+  --color-base-200: #1a1e29;
+  --color-base-300: #2f3648;
+
+  --color-info: #53b6dd;
+  --color-success: #76b900;
+  --color-warning: #f1c40f;
+  --color-error: #fe6347;
+}
+
+@custom-variant dark (&:where([data-theme*='dark'], [data-theme*='dark'] *));
+
+@theme {
+  --font-estedad: var(--font-estedad), Arial, sans-serif;
+  --font-vazirmatn: var(--font-vazirmatn), Tahoma, sans-serif;
+}
 
 @layer base {
   body {
