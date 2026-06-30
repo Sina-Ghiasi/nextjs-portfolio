@@ -9,7 +9,7 @@ export async function getAllNavLinksFromDb() {
   if (!result.success) {
     console.error("Validation error in getAllNavLinksFromDb():", result.error);
     throw new Error(
-      "Failed to validate nav link data retrieved from the database in getAllNavLinksFromDb()."
+      "Failed to validate nav link data retrieved from the database in getAllNavLinksFromDb().",
     );
   }
 

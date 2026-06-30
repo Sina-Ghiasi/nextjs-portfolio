@@ -24,7 +24,7 @@ export default function NavLinkList({
             <Link
               href={link.href}
               className={cn(
-                "hover:border-b-2 hover:border-primary transition-all pb-1",
+                "pb-1 transition-all hover:border-b-2 hover:border-primary",
                 isActive
                   ? "border-b-2 border-primary"
                   : "border-b-2 border-transparent",

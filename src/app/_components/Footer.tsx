@@ -6,8 +6,8 @@ import Link from "next/link";
 export default async function Footer() {
   const navLinks = await getAllNavLinksFromDb();
   return (
-    <footer className="bg-base-100 text-base-content border-t border-neutral">
-      <div className="flex flex-col md:flex-row gap-4 justify-between items-center p-4">
+    <footer className="border-t border-neutral bg-base-100 text-base-content">
+      <div className="flex flex-col items-center justify-between gap-4 p-4 md:flex-row">
         {/* first section */}
         <div className="md:w-37.5 lg:w-50">
           <Link href="/">
@@ -31,14 +31,14 @@ export default async function Footer() {
         </nav>
 
         {/* third section */}
-        <nav className="flex gap-4 justify-end md:w-37.5 lg:w-50">
+        <nav className="flex justify-end gap-4 md:w-37.5 lg:w-50">
           <Link
             href={"https://github.com/sina-ghiasi"}
             target="_blank"
             aria-label="Github"
           >
             <svg
-              className="fill-primary hover:fill-accent w-8 h-8"
+              className="h-8 w-8 fill-primary hover:fill-accent"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 50 50"
             >
@@ -51,7 +51,7 @@ export default async function Footer() {
             aria-label="Linkedin"
           >
             <svg
-              className="fill-primary hover:fill-accent w-8 h-8"
+              className="h-8 w-8 fill-primary hover:fill-accent"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 50 50"
             >
@@ -64,7 +64,7 @@ export default async function Footer() {
             aria-label="Telegram"
           >
             <svg
-              className="fill-primary hover:fill-accent w-8 h-8"
+              className="h-8 w-8 fill-primary hover:fill-accent"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 50 50"
             >
@@ -75,7 +75,7 @@ export default async function Footer() {
       </div>
 
       <div>
-        <p className="text-center text-xs font-medium p-2">
+        <p className="p-2 text-center text-xs font-medium">
           © {new Date().getFullYear()} تمامی حقوق محفوظ است.
         </p>
       </div>

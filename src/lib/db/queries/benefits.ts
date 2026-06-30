@@ -9,7 +9,7 @@ export async function getAllBenefitFromDb() {
   if (!result.success) {
     console.error("Validation error in getAllBenefitsFromDb():", result.error);
     throw new Error(
-      "Failed to validate FAQ data retrieved from the database in getAllBenefitsFromDb()."
+      "Failed to validate FAQ data retrieved from the database in getAllBenefitsFromDb().",
     );
   }
 

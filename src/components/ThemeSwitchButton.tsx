@@ -10,18 +10,18 @@ export default function ThemeSwitchButton() {
 
   useEffect(() => setMounted(true), []);
 
-  if (!mounted) return <div className="h-6 w-6 mx-2"></div>;
+  if (!mounted) return <div className="mx-2 h-6 w-6"></div>;
 
   return (
-    <div className="swap swap-rotate mx-2">
+    <div className="swap mx-2 swap-rotate">
       <Sun
-        className={`fill-current h-6 w-6 ${
+        className={`h-6 w-6 fill-current ${
           resolvedTheme === "light" ? "swap-on" : "swap-off"
         }`}
         onClick={() => setTheme("dark")}
       />
       <Moon
-        className={`fill-current h-6 w-6 ${
+        className={`h-6 w-6 fill-current ${
           resolvedTheme === "dark" ? "swap-on" : "swap-off"
         }`}
         onClick={() => setTheme("light")}

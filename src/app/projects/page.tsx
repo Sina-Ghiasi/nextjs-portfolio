@@ -6,15 +6,15 @@ export const revalidate = 432000; // 5 days
 export default async function ProjectsPage() {
   const projects = await getAllProjectsFromDb();
   return (
-    <section className="flex flex-col mx-5 lg:mx-8 my-8 md:my-12">
-      <h3 className="font-extrabold text-2xl mb-2 text-center">
+    <section className="mx-5 my-8 flex flex-col md:my-12 lg:mx-8">
+      <h3 className="mb-2 text-center text-2xl font-extrabold">
         پروژه‌های انجام شده
       </h3>
-      <p className="text-sm mb-8 text-center">
+      <p className="mb-8 text-center text-sm">
         مجموعه‌ای از پروژه‌هایی که با دقت، خلاقیت و تمرکز بر تجربه کاربری توسعه
         داده‌ام.
       </p>
-      <div className="flex flex-col gap-8 mb-8">
+      <div className="mb-8 flex flex-col gap-8">
         {projects.map((project) => (
           <PortfolioCard key={project.slug} project={project} />
         ))}

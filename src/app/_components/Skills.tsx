@@ -4,18 +4,18 @@ import Image from "next/image";
 export default async function Skills() {
   const devTools = await getAllDevToolsFromDb();
   return (
-    <section className="flex flex-col mx-5 lg:mx-8 mb-8 md:mb-16">
-      <h3 className="font-extrabold text-2xl text-center mb-2">مهارت ها</h3>
-      <p className="text-sm text-center mb-8">
+    <section className="mx-5 mb-8 flex flex-col md:mb-16 lg:mx-8">
+      <h3 className="mb-2 text-center text-2xl font-extrabold">مهارت ها</h3>
+      <p className="mb-8 text-center text-sm">
         مهارت ها، ابزار ها و تکنولوژی هایی که استفاده می کنم.
       </p>
-      <div className="flex flex-wrap justify-center gap-x-8 md:gap-x-16 gap-y-8">
+      <div className="flex flex-wrap justify-center gap-x-8 gap-y-8 md:gap-x-16">
         {devTools.map((tool) => (
           <div
-            className="flex flex-col gap-2 items-center min-w-16 md:min-w-24 "
+            className="flex min-w-16 flex-col items-center gap-2 md:min-w-24"
             key={tool.name}
           >
-            <div className="relative w-12 h-12 ">
+            <div className="relative h-12 w-12">
               <Image
                 src={tool.imageUrl}
                 alt={tool.name}

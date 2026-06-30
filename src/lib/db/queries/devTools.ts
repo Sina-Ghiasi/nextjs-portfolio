@@ -9,7 +9,7 @@ export async function getAllDevToolsFromDb() {
   if (!result.success) {
     console.error("Validation error in getAllDevToolsFromDb():", result.error);
     throw new Error(
-      "Failed to validate developer tool data retrieved from the database in getAllDevToolsFromDb()."
+      "Failed to validate developer tool data retrieved from the database in getAllDevToolsFromDb().",
     );
   }
 

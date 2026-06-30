@@ -85,23 +85,23 @@ export default async function ProjectPage({
 
   return (
     <>
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start mx-5 lg:mx-8 my-8 md:my-12">
+      <section className="mx-5 my-8 grid grid-cols-1 items-start gap-10 md:my-12 md:grid-cols-2 lg:mx-8">
         <Image
           src={images?.[0] ?? "/images/projects/placeholder.svg"}
           alt={title}
           width={600}
           height={450}
-          className="rounded-xl w-full h-auto"
+          className="h-auto w-full rounded-xl"
           sizes="(max-width: 768px) 100vw, 800px"
           priority
         />
 
         <div className="space-y-6">
-          <h1 className="text-2xl lg:text-4xl font-bold">{title}</h1>
-          <div className="flex gap-2 items-center">
-            <h2 className="text-base font-semibold mb-1">وضعیت :</h2>
+          <h1 className="text-2xl font-bold lg:text-4xl">{title}</h1>
+          <div className="flex items-center gap-2">
+            <h2 className="mb-1 text-base font-semibold">وضعیت :</h2>
             <span
-              className={`badge badge-sm pt-2.5 pb-2 px-2.5 ${
+              className={`badge px-2.5 pt-2.5 pb-2 badge-sm ${
                 status === "active"
                   ? "badge-success"
                   : status === "on-hold"
@@ -114,7 +114,7 @@ export default async function ProjectPage({
           </div>
 
           <div>
-            <h2 className="text-base font-semibold mb-4">
+            <h2 className="mb-4 text-base font-semibold">
               تکنولوژی و ابزارهایی که استفاده شده :
             </h2>
             <Technologies technologies={technologies} />
@@ -125,7 +125,7 @@ export default async function ProjectPage({
               <a
                 href={demoUrl}
                 target="_blank"
-                className="btn btn-sm btn-primary"
+                className="btn btn-primary btn-sm"
               >
                 دمو آنلاین
               </a>
@@ -134,7 +134,7 @@ export default async function ProjectPage({
               <a
                 href={githubUrl}
                 target="_blank"
-                className="btn btn-sm btn-secondary"
+                className="btn btn-secondary btn-sm"
               >
                 گیت هاب
               </a>
@@ -143,9 +143,9 @@ export default async function ProjectPage({
         </div>
       </section>
 
-      <section className="mx-5 lg:mx-8 mb-8 md:mb-12">
-        <h2 className="text-xl lg:text-2xl font-bold mb-4">درباره پروژه</h2>
-        <p className="text-sm lg:text-base leading-relaxed text-base-content">
+      <section className="mx-5 mb-8 md:mb-12 lg:mx-8">
+        <h2 className="mb-4 text-xl font-bold lg:text-2xl">درباره پروژه</h2>
+        <p className="text-sm leading-relaxed text-base-content lg:text-base">
           {description ?? "توضیحات بیشتری برای این پروژه ثبت نشده است."}
         </p>
       </section>

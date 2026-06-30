@@ -4,27 +4,27 @@ import { BenefitType } from "@/types/benefits";
 export default async function Benefits() {
   const benefits = await getAllBenefitFromDb();
   return (
-    <section className="flex flex-col mx-5 lg:mx-8 mb-8 md:mb-16">
-      <h3 className="font-extrabold text-2xl mb-2 text-center">
+    <section className="mx-5 mb-8 flex flex-col md:mb-16 lg:mx-8">
+      <h3 className="mb-2 text-center text-2xl font-extrabold">
         مزایای همکاری
       </h3>
-      <p className="text-sm mb-8 text-center">
+      <p className="mb-8 text-center text-sm">
         با انتخاب خدمات طراحی و توسعه من شما از مزایای زیر بهره مند خواهید شد.
       </p>
       <div className="grid grid-cols-12 gap-4">
-        <div className="col-span-12 lg:col-span-6 p-4 md:p-6 rounded-xl bg-base-200 text-base-content border border-base-200 hover:border-base-300">
+        <div className="col-span-12 rounded-xl border border-base-200 bg-base-200 p-4 text-base-content hover:border-base-300 md:p-6 lg:col-span-6">
           <Benefit benefit={benefits[0]} />
         </div>
-        <div className="col-span-12 lg:col-span-6 p-4 md:p-6 rounded-xl bg-base-200 text-base-content border border-base-200 hover:border-base-300">
+        <div className="col-span-12 rounded-xl border border-base-200 bg-base-200 p-4 text-base-content hover:border-base-300 md:p-6 lg:col-span-6">
           <Benefit benefit={benefits[1]} />
         </div>
-        <div className="col-span-12 lg:col-span-4 p-4 md:p-6 rounded-xl bg-base-200 text-base-content border border-base-200 hover:border-base-300">
+        <div className="col-span-12 rounded-xl border border-base-200 bg-base-200 p-4 text-base-content hover:border-base-300 md:p-6 lg:col-span-4">
           <Benefit benefit={benefits[2]} />
         </div>
-        <div className="col-span-12 lg:col-span-4 p-4 md:p-6 rounded-xl bg-base-200 text-base-content border border-base-200 hover:border-base-300">
+        <div className="col-span-12 rounded-xl border border-base-200 bg-base-200 p-4 text-base-content hover:border-base-300 md:p-6 lg:col-span-4">
           <Benefit benefit={benefits[3]} />
         </div>
-        <div className="col-span-12 lg:col-span-4 p-4 md:p-6 rounded-xl bg-base-200 text-base-content border border-base-200 hover:border-base-300">
+        <div className="col-span-12 rounded-xl border border-base-200 bg-base-200 p-4 text-base-content hover:border-base-300 md:p-6 lg:col-span-4">
           <Benefit benefit={benefits[4]} />
         </div>
       </div>

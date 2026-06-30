@@ -55,10 +55,10 @@ export default function ProfileAnimation() {
 
   return (
     <div
-      className="flex flex-col gap-2 text-center overflow-hidden mt-4"
+      className="mt-4 flex flex-col gap-2 overflow-hidden text-center"
       ref={container}
     >
-      <div className="relative mx-auto mb-2 w-[256px] lg:w-[300px] h-[256px] lg:h-[300px] overflow-hidden">
+      <div className="relative mx-auto mb-2 h-64 w-[256px] overflow-hidden lg:h-75 lg:w-75">
         <Image
           src="/images/profile-min.png"
           alt="سینا قیاسی"
@@ -68,7 +68,7 @@ export default function ProfileAnimation() {
           priority
           onLoad={() => setImageLoaded(true)}
         />
-        <div className="absolute inset-x-0 bottom-0 h-1/5 bg-linear-to-t from-base-100 to-transparent pointer-events-none" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/5 bg-linear-to-t from-base-100 to-transparent" />
       </div>
 
       <h1 className="name text-[clamp(2.5rem,6vmin,6rem)] font-extrabold opacity-0">

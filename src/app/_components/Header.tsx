@@ -9,16 +9,16 @@ export default async function Header() {
   const navLinks = await getAllNavLinksFromDb();
 
   return (
-    <header className="navbar bg-base-100 border-b border-neutral lg:px-4">
+    <header className="navbar border-b border-neutral bg-base-100 lg:px-4">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-            <Menu className="w-6 h-6" />
+            <Menu className="h-6 w-6" />
           </div>
 
           <ul
             tabIndex={0}
-            className="menu dropdown-content bg-base-100 rounded-box z-1 mt-3 min-w-32 p-2 shadow-sm"
+            className="dropdown-content menu z-1 mt-3 min-w-32 rounded-box bg-base-100 p-2 shadow-sm"
           >
             {navLinks.map((link) => (
               <li key={link.href} className="mx-1">
@@ -47,7 +47,7 @@ export default async function Header() {
       <div className="navbar-end">
         <a
           href={process.env.NEXT_PUBLIC_RESUME_URL}
-          className="btn btn-xs sm:btn-sm btn-primary mx-4"
+          className="btn mx-4 btn-primary btn-xs sm:btn-sm"
           target="_blank"
           rel="noopener"
         >

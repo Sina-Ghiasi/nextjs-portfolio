@@ -9,7 +9,7 @@ export async function getAllProjectsFromDb() {
   if (!result.success) {
     console.error("Validation error in getAllProjectsFromDb():", result.error);
     throw new Error(
-      "Failed to validate project data retrieved from the database in getAllProjectsFromDb()."
+      "Failed to validate project data retrieved from the database in getAllProjectsFromDb().",
     );
   }
   return result.data;
@@ -25,10 +25,10 @@ export async function getProjectBySlugFromDb(projectSlug: string) {
   if (!result.success) {
     console.error(
       "Validation error in getProjectBySlugFromDb():",
-      result.error
+      result.error,
     );
     throw new Error(
-      "Failed to validate Project data retrieved from the database in getProjectBySlugFromDb()."
+      "Failed to validate Project data retrieved from the database in getProjectBySlugFromDb().",
     );
   }
 

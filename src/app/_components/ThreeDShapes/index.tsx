@@ -15,7 +15,7 @@ const bridgeHDRI = () =>
 
 export default function ThreeDShapes() {
   return (
-    <div className="h-[300px] md:h-full max-h-[500px]">
+    <div className="h-75 max-h-125 md:h-full">
       <Canvas
         className="z-0"
         shadows

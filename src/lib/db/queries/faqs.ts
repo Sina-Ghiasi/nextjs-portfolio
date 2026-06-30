@@ -9,7 +9,7 @@ export async function getAllFaqsFromDb() {
   if (!result.success) {
     console.error("Validation error in getAllFaqsFromDb():", result.error);
     throw new Error(
-      "Failed to validate FAQ data retrieved from the database in getAllFaqsFromDb()."
+      "Failed to validate FAQ data retrieved from the database in getAllFaqsFromDb().",
     );
   }
 

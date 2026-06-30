@@ -10,14 +10,14 @@ export default function ProjectCard({ project }: { project: ProjectType }) {
 
   return (
     <Link href={`/projects/${slug}`} className="block">
-      <div className="card lg:card-side bg-base-200 border border-base-200 hover:border-neutral shadow-lg rounded-xl transition">
-        <figure className="w-full h-36 md:h-52 lg:h-auto bg-gray-200 relative overflow-hidden">
+      <div className="card rounded-xl border border-base-200 bg-base-200 shadow-lg transition hover:border-neutral lg:card-side">
+        <figure className="relative h-36 w-full overflow-hidden bg-gray-200 md:h-52 lg:h-auto">
           <Image
             src={images?.[0] ?? "/images/projects/placeholder.svg"}
             alt={title}
             fill
             sizes="(max-width: 768px) 100vw, 800px"
-            className="object-cover aspect-video"
+            className="aspect-video object-cover"
           />
         </figure>
 
@@ -29,13 +29,13 @@ export default function ProjectCard({ project }: { project: ProjectType }) {
 
           <Technologies technologies={technologies} />
 
-          <div className="card-actions justify-end mt-3">
+          <div className="mt-3 card-actions justify-end">
             <span
-              className="btn btn-sm lg:btn-md btn-primary"
+              className="btn btn-primary btn-sm lg:btn-md"
               role="presentation"
               aria-hidden="true"
             >
-              <ExternalLink className="w-4 h-4  lg:w-5 lg:h-5" />
+              <ExternalLink className="h-4 w-4 lg:h-5 lg:w-5" />
             </span>
           </div>
         </div>
