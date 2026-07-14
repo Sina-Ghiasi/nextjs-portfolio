@@ -4,6 +4,7 @@ import Image from "next/image";
 import NavLinkList from "@/components/NavLinkList";
 import ThemeSwitchButton from "@/components/ThemeSwitchButton";
 import { getAllNavLinksFromDb } from "@/lib/db/queries/navLinks";
+import { getEnv } from "@/utils/env";
 
 export default async function Header() {
   const navLinks = await getAllNavLinksFromDb();
@@ -46,7 +47,7 @@ export default async function Header() {
 
       <div className="navbar-end">
         <a
-          href={process.env.NEXT_PUBLIC_RESUME_URL}
+          href={getEnv("NEXT_PUBLIC_RESUME_URL")}
           className="btn mx-4 btn-primary btn-xs sm:btn-sm"
           target="_blank"
           rel="noopener"

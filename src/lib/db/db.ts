@@ -1,30 +1,62 @@
-import { MongoClient, Db } from "mongodb";
-
-const getEnv = (key: string): string => {
-  const value = process.env[key];
-  if (!value) throw new Error(`Missing required environment variable: ${key}`);
-  return value;
-};
+import { Db, MongoClient } from "mongodb";
+import { getEnv } from "@/utils/env";
 
 const MONGODB_URI = getEnv("MONGODB_URI");
 const MONGODB_DB = getEnv("MONGODB_DB");
 
-let cachedClient: MongoClient | null = null;
-
-export async function connectToDatabase(): Promise<{
+type DatabaseConnection = {
   client: MongoClient;
   db: Db;
-}> {
-  if (cachedClient) {
-    return { client: cachedClient, db: cachedClient.db(MONGODB_DB) };
-  }
+};
 
-  const client = new MongoClient(MONGODB_URI, {
+const createClient = () =>
+  new MongoClient(MONGODB_URI, {
     maxPoolSize: 10,
   });
 
-  await client.connect();
-  cachedClient = client;
+declare global {
+  /* eslint-disable-next-line no-var */
+  var _mongoClientPromise: Promise<MongoClient> | undefined;
+}
 
-  return { client, db: client.db(MONGODB_DB) };
+let cachedClientPromise: Promise<MongoClient> | null = null;
+
+export async function connectToDatabase(): Promise<DatabaseConnection> {
+  const isDevelopment = process.env.NODE_ENV === "development";
+
+  let clientPromise: Promise<MongoClient>;
+
+  if (isDevelopment) {
+    if (!global._mongoClientPromise) {
+      global._mongoClientPromise = createClient().connect();
+    }
+
+    clientPromise = global._mongoClientPromise;
+  } else {
+    if (!cachedClientPromise) {
+      cachedClientPromise = createClient().connect();
+    }
+
+    clientPromise = cachedClientPromise;
+  }
+
+  try {
+    const client = await clientPromise;
+
+    return {
+      client,
+      db: client.db(MONGODB_DB),
+    };
+  } catch (error) {
+    // Clear the cached promise so future requests can retry the connection.
+    if (isDevelopment) {
+      global._mongoClientPromise = undefined;
+    } else {
+      cachedClientPromise = null;
+    }
+
+    throw new Error("Failed to connect to MongoDB.", {
+      cause: error,
+    });
+  }
 }

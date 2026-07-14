@@ -1,10 +1,11 @@
 import { getAllProjectsFromDb } from "@/lib/db/queries/projects";
 import { ProjectType } from "@/types/project";
+import { getEnv } from "@/utils/env";
 import { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const projects: ProjectType[] = await getAllProjectsFromDb();
-  const baseUrl = process.env.BASE_URL!;
+  const baseUrl = getEnv("BASE_URL");
   return [
     {
       url: `${baseUrl}/`,
