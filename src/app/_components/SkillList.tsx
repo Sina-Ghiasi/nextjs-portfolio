@@ -2,22 +2,19 @@
 
 import { useRef } from "react";
 import Image from "next/image";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from "@/lib/gsap";
 import { useGSAP } from "@gsap/react";
-
-gsap.registerPlugin(ScrollTrigger);
 
 interface Tool {
   name: string;
   imageUrl: string;
 }
 
-interface SkillsListProps {
+interface SkillListProps {
   devTools: Tool[];
 }
 
-export default function SkillsList({ devTools }: SkillsListProps) {
+export default function SkillList({ devTools }: SkillListProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -35,8 +32,8 @@ export default function SkillsList({ devTools }: SkillsListProps) {
           opacity: 1,
           y: 0,
           scale: 1,
-          duration: 0.8,
-          stagger: 0.08,
+          duration: 0.5,
+          stagger: 0.05,
           ease: "power3.out",
           scrollTrigger: {
             trigger: containerRef.current,
@@ -76,16 +73,16 @@ export default function SkillsList({ devTools }: SkillsListProps) {
   return (
     <div
       ref={containerRef}
-      className="flex flex-wrap justify-center gap-x-8 gap-y-8 md:gap-x-16"
+      className="grid grid-cols-[repeat(auto-fit,minmax(4rem,1fr))] justify-center gap-6 md:gap-x-22"
     >
       {devTools.map((tool) => (
         <div
           key={tool.name}
           onPointerEnter={handlePointerEnter}
           onPointerLeave={handlePointerLeave}
-          className="flex min-w-16 cursor-pointer flex-col items-center gap-2 md:min-w-24"
+          className="flex cursor-pointer flex-col items-center gap-2"
         >
-          <div className="relative h-12 w-12">
+          <div className="relative size-10 md:size-12">
             <Image
               src={tool.imageUrl}
               alt={tool.name}
@@ -94,7 +91,7 @@ export default function SkillsList({ devTools }: SkillsListProps) {
             />
           </div>
 
-          <h4 className="text-sm font-medium text-neutral-600 dark:text-neutral-400">
+          <h4 className="text-center text-sm font-medium text-neutral-600 dark:text-neutral-400">
             {tool.name}
           </h4>
         </div>
