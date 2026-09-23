@@ -1,10 +1,10 @@
 import NavLinkList from "@/components/NavLinkList";
-import { getAllNavLinksFromDb } from "@/lib/db/queries/navLinks";
+import { getAllNavLinks } from "@/lib/db/queries/navLinks";
 import Image from "next/image";
 import Link from "next/link";
 
 export default async function Footer() {
-  const navLinks = await getAllNavLinksFromDb();
+  const navLinks = await getAllNavLinks();
   return (
     <footer className="border-t border-neutral bg-base-100 text-base-content">
       <div className="flex flex-col items-center justify-between gap-4 p-4 md:flex-row">

@@ -1,8 +1,8 @@
-import { getAllBenefitFromDb } from "@/lib/db/queries/benefits";
+import { getAllBenefits } from "@/lib/db/queries/benefits";
 import BenefitList from "./BenefitList";
 
 export default async function Benefits() {
-  const benefits = await getAllBenefitFromDb();
+  const benefits = await getAllBenefits();
 
   return (
     <section className="mx-5 mb-8 flex flex-col md:mb-16 lg:mx-8">

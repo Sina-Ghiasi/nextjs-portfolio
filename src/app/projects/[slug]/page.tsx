@@ -1,10 +1,7 @@
 import Image from "next/image";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import {
-  getAllProjectsFromDb,
-  getProjectBySlugFromDb,
-} from "@/lib/db/queries/projects";
+import { getAllProjects, getProjectBySlug } from "@/lib/db/queries/projects";
 import Technologies from "@/components/Technologies";
 
 export const revalidate = 432000; // 5 days
@@ -16,7 +13,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   try {
     const { slug } = await params;
-    const project = await getProjectBySlugFromDb(slug);
+    const project = await getProjectBySlug(slug);
 
     if (!project) {
       return {
@@ -53,7 +50,7 @@ export async function generateMetadata({
 
 export async function generateStaticParams() {
   try {
-    const projects = await getAllProjectsFromDb();
+    const projects = await getAllProjects();
     return projects.map((p) => ({
       slug: p.slug,
     }));
@@ -69,7 +66,7 @@ export default async function ProjectPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const project = await getProjectBySlugFromDb(slug);
+  const project = await getProjectBySlug(slug);
 
   if (!project) notFound();
 

@@ -1,10 +1,10 @@
 import PortfolioCard from "@/components/ProjectCard";
-import { getAllProjectsFromDb } from "@/lib/db/queries/projects";
+import { getAllProjects } from "@/lib/db/queries/projects";
 
 export const revalidate = 432000; // 5 days
 
 export default async function ProjectsPage() {
-  const projects = await getAllProjectsFromDb();
+  const projects = await getAllProjects();
   return (
     <section className="mx-5 my-8 flex flex-col md:my-12 lg:mx-8">
       <h3 className="mb-2 text-center text-2xl font-extrabold">
@@ -16,7 +16,7 @@ export default async function ProjectsPage() {
       </p>
       <div className="mb-8 flex flex-col gap-8">
         {projects.map((project) => (
-          <PortfolioCard key={project.slug} project={project} />
+          <PortfolioCard key={project.id} project={project} />
         ))}
       </div>
     </section>

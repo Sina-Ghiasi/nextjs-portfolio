@@ -1,8 +1,8 @@
-import { getAllFaqsFromDb } from "@/lib/db/queries/faqs";
+import { getAllFaqs } from "@/lib/db/queries/faqs";
 import { CircleHelp, Rocket } from "lucide-react";
 
 export default async function FAQs() {
-  const faqs = await getAllFaqsFromDb();
+  const faqs = await getAllFaqs();
   return (
     <section className="mx-5 mb-8 flex flex-col md:mb-16 lg:mx-8">
       <h3 className="mb-2 text-center text-2xl font-extrabold">
@@ -13,7 +13,7 @@ export default async function FAQs() {
         <div className="rounded-xl bg-base-200 p-4 md:col-span-2 lg:p-6">
           {faqs.map((faq, index) => (
             <details
-              key={faq.question}
+              key={faq.id}
               className="collapse-plus collapse mb-2 bg-base-100 text-sm md:text-base"
               name={faq.question}
               open={index === 0}

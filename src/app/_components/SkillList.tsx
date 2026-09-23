@@ -4,14 +4,10 @@ import { useRef } from "react";
 import Image from "next/image";
 import { gsap } from "@/lib/gsap";
 import { useGSAP } from "@gsap/react";
-
-interface Tool {
-  name: string;
-  imageUrl: string;
-}
+import { DevToolType } from "@/types/devTools";
 
 interface SkillListProps {
-  devTools: Tool[];
+  devTools: DevToolType[];
 }
 
 export default function SkillList({ devTools }: SkillListProps) {
@@ -77,7 +73,7 @@ export default function SkillList({ devTools }: SkillListProps) {
     >
       {devTools.map((tool) => (
         <div
-          key={tool.name}
+          key={tool.id}
           onPointerEnter={handlePointerEnter}
           onPointerLeave={handlePointerLeave}
           className="flex cursor-pointer flex-col items-center gap-2"

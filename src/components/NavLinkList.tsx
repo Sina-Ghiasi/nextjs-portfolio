@@ -1,16 +1,16 @@
 "use client";
 
+import { NavLinkType } from "@/types/navLink";
 import { cn } from "@/utils/cn";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function NavLinkList({
-  className,
-  linkList,
-}: {
+interface NavLinkListProps {
   className?: string;
-  linkList: { title: string; href: string }[];
-}) {
+  linkList: NavLinkType[];
+}
+
+export default function NavLinkList({ className, linkList }: NavLinkListProps) {
   const pathname = usePathname();
 
   return (
@@ -20,7 +20,7 @@ export default function NavLinkList({
           link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
 
         return (
-          <li key={link.href} className="mx-1">
+          <li key={link.id} className="mx-1">
             <Link
               href={link.href}
               className={cn(

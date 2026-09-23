@@ -3,11 +3,11 @@ import { Menu } from "lucide-react";
 import Image from "next/image";
 import NavLinkList from "@/components/NavLinkList";
 import ThemeSwitchButton from "@/components/ThemeSwitchButton";
-import { getAllNavLinksFromDb } from "@/lib/db/queries/navLinks";
+import { getAllNavLinks } from "@/lib/db/queries/navLinks";
 import { getEnv } from "@/utils/env";
 
 export default async function Header() {
-  const navLinks = await getAllNavLinksFromDb();
+  const navLinks = await getAllNavLinks();
 
   return (
     <header className="navbar border-b border-neutral bg-base-100 lg:px-4">
@@ -22,7 +22,7 @@ export default async function Header() {
             className="dropdown-content menu z-1 mt-3 min-w-32 rounded-box bg-base-100 p-2 shadow-sm"
           >
             {navLinks.map((link) => (
-              <li key={link.href} className="mx-1">
+              <li key={link.id} className="mx-1">
                 <Link href={link.href}>{link.title}</Link>
               </li>
             ))}

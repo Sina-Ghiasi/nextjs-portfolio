@@ -69,7 +69,7 @@ export default function BenefitList({ benefits }: BenefitListProps) {
     <div ref={gridRef} className="grid grid-cols-12 gap-4">
       {benefits.map((benefit, index) => (
         <div
-          key={index}
+          key={benefit.id}
           onPointerEnter={handlePointerEnter}
           onPointerLeave={handlePointerLeave}
           className={cn(
