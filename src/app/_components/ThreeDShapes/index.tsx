@@ -2,26 +2,41 @@
 import { Mesh, Material, BufferGeometry } from "three";
 import { Canvas, ThreeEvent } from "@react-three/fiber";
 import { ContactShadows, Float, Environment, Html } from "@react-three/drei";
-import { Suspense, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { geometries } from "./geometries";
 import { materials } from "./materials";
 import useSound from "@/hooks/useSounds";
-import { suspend } from "suspend-react";
 import Loading from "@/components/Loading";
-const bridgeHDRI = () =>
-  import("@pmndrs/assets/hdri/bridge.exr").then((module) => module.default);
 
 export default function ThreeDShapes() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { rootMargin: "50px" }, // Pre-trigger slightly before scrolling into view
+    );
+
+    observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="h-75 max-h-125 md:h-full">
+    <div ref={containerRef} className="h-75 max-h-125 md:h-full">
       <Canvas
         className="z-0"
         shadows
-        gl={{ antialias: false }}
+        gl={{ antialias: true, powerPreference: "high-performance" }}
         dpr={[1, 1.5]}
         camera={{ position: [0, 0, 21], fov: 30, near: 1, far: 40 }}
+        frameloop={isInView ? "always" : "never"}
       >
         <Suspense
           fallback={
@@ -37,8 +52,9 @@ export default function ThreeDShapes() {
             scale={40}
             blur={1}
             far={9}
+            resolution={512}
           />
-          <Environment files={suspend(bridgeHDRI)} />
+          <Environment files="/hdris/sunset.jpg" />
         </Suspense>
       </Canvas>
     </div>
