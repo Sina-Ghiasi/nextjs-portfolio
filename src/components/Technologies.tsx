@@ -1,14 +1,21 @@
+import { cn } from "@/utils/cn";
+import { HTMLAttributes } from "react";
+
+interface TechnologiesProps extends HTMLAttributes<HTMLElement> {
+  technologies: string[];
+}
+
 export default function Technologies({
   technologies,
-}: {
-  technologies: string[];
-}) {
+  className,
+  ...rest
+}: TechnologiesProps) {
   return (
-    <div className="mt-2 flex flex-wrap gap-2">
+    <div className={cn("flex flex-wrap gap-2", className)} {...rest}>
       {technologies.map((technology) => (
         <span
           key={technology}
-          className="badge px-2.5 pt-2.5 pb-2 badge-sm badge-info"
+          className="badge pt-0.5 badge-xs badge-info md:badge-sm"
         >
           {technology}
         </span>
