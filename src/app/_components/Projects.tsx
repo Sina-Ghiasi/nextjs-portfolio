@@ -1,11 +1,14 @@
 import Link from "next/link";
-import ProjectCard from "@/components/ProjectCard";
 import { getAllProjects } from "@/lib/db/queries/projects";
+import ProjectList from "./ProjectList";
 
 export default async function Projects() {
   const projects = await getAllProjects();
+
+  const featuredProjects = projects.slice(0, 4);
+
   return (
-    <section className="mx-5 mb-8 flex flex-col md:mb-16 lg:mx-8">
+    <section className="mx-5 mb-8 overflow-hidden md:mb-16 lg:mx-8">
       <h3 className="mb-2 text-center text-2xl font-extrabold">
         پروژه‌های انجام شده
       </h3>
@@ -13,14 +16,13 @@ export default async function Projects() {
         در اینجا برخی از پروژه‌های برجسته‌ام را مشاهده خواهید کرد که نشان‌دهنده
         مهارت و تجربه من در توسعه وب است.
       </p>
-      <div className="mb-8 flex flex-col gap-8">
-        {projects.slice(0, 3).map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
+      <ProjectList projects={featuredProjects} />
+
+      <div className="mt-2 flex justify-center md:mt-6">
+        <Link href={"/projects"} className="btn btn-primary">
+          مشاهده همه
+        </Link>
       </div>
-      <Link href={"/projects"} className="btn self-center btn-primary">
-        مشاهده همه
-      </Link>
     </section>
   );
 }
